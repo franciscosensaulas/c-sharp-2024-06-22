@@ -118,4 +118,56 @@ static void ExemploIfColaborador()
 //        Calcular a média
 //        Apresentar se o aluno está reprovado ou aprovado.
 
-ExemploIfColaborador();
+static void ExemploOperadorLogicoE()
+{   // Aplicar desconto de 5% para produtos entre 2590 e 10000
+    // Aplicar desconto de 10% para produtos entre 10000.01 e 200000
+    // Aplicar desconto de 25% para produtos acima de 20000
+    Console.Write("Digite o preço do produto: ");
+    double valorProduto = Convert.ToDouble(Console.ReadLine()); // 9584,72
+    int percentualDesconto = 0;
+
+    if ((valorProduto >= 2_590) && (valorProduto <= 10_000))
+    {
+        percentualDesconto = 5;
+    }
+    else if ((valorProduto >= 10_000.01) && (valorProduto <= 20_000))
+    {
+        percentualDesconto = 10;
+    }
+    else if (valorProduto > 20_000)
+    {
+        percentualDesconto = 25;
+    }
+
+    double valorDesconto = 0;
+    if (percentualDesconto > 0)
+    {
+        // 50000      100 
+        // x          25
+        // (50000 * 25) / 100 => valor do desconto => 12500
+        valorDesconto = (valorProduto * percentualDesconto) / 100;
+    }
+
+    double valorTotal = valorProduto - valorDesconto;
+    Console.WriteLine("Valor desconto: " + valorDesconto);
+    Console.WriteLine("Valor total: " + valorTotal);
+}
+
+static void ExemploOperadorLogicoOu()
+{
+    Console.Write("Digite a categoria");
+    string categoria = Console.ReadLine();
+    double preco = 0;
+    // se (categoria = "Ação") ou (categoria = "Suspense") entao
+    if ((categoria == "Ação") || (categoria == "Suspense"))
+    {
+        preco = 4.75;
+    }
+    else
+    {
+        preco = 8.75;
+    }
+    Console.WriteLine("Preço do filme: " + preco);
+}
+
+ExemploOperadorLogicoE();

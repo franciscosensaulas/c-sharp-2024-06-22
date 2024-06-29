@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploSaida", "ExemploSaida\ExemploSaida.csproj", "{AECFDDAB-F108-4368-A299-021B2D409AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploSaida", "ExemploSaida\ExemploSaida.csproj", "{AECFDDAB-F108-4368-A299-021B2D409AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploVariaveis", "ExemploVariaveis\ExemploVariaveis.csproj", "{7A5C060B-4AE8-43BD-B0F7-1B57800BE991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploVariaveis", "ExemploVariaveis\ExemploVariaveis.csproj", "{7A5C060B-4AE8-43BD-B0F7-1B57800BE991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploEntrada", "ExemploEntrada\ExemploEntrada.csproj", "{1553FCA6-4B95-40B0-9031-DAB7BBBC1498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploEntrada", "ExemploEntrada\ExemploEntrada.csproj", "{1553FCA6-4B95-40B0-9031-DAB7BBBC1498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploConversao", "ExemploConversao\ExemploConversao.csproj", "{A6A19499-4F25-4FB9-93C5-DB05DBB252C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploConversao", "ExemploConversao\ExemploConversao.csproj", "{A6A19499-4F25-4FB9-93C5-DB05DBB252C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploEstruturaCondicional", "ExemploEstruturaCondicional\ExemploEstruturaCondicional.csproj", "{EF6E4311-D80D-4952-8AD6-580349F6B395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploEstruturaCondicional", "ExemploEstruturaCondicional\ExemploEstruturaCondicional.csproj", "{EF6E4311-D80D-4952-8AD6-580349F6B395}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploTratatementoErros", "ExemploTratatementoErros\ExemploTratatementoErros.csproj", "{672C4363-467A-4303-9C03-AC078CE7C57B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploEnquanto", "ExemploEnquanto\ExemploEnquanto.csproj", "{BC3097FE-0E9F-4C59-952F-DCB0AC7D6935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploStrings", "ExemploStrings\ExemploStrings.csproj", "{4FE4A015-D169-4124-B3D4-77BF91C4500B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{EF6E4311-D80D-4952-8AD6-580349F6B395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF6E4311-D80D-4952-8AD6-580349F6B395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF6E4311-D80D-4952-8AD6-580349F6B395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672C4363-467A-4303-9C03-AC078CE7C57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672C4363-467A-4303-9C03-AC078CE7C57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672C4363-467A-4303-9C03-AC078CE7C57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672C4363-467A-4303-9C03-AC078CE7C57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3097FE-0E9F-4C59-952F-DCB0AC7D6935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3097FE-0E9F-4C59-952F-DCB0AC7D6935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3097FE-0E9F-4C59-952F-DCB0AC7D6935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3097FE-0E9F-4C59-952F-DCB0AC7D6935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE4A015-D169-4124-B3D4-77BF91C4500B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE4A015-D169-4124-B3D4-77BF91C4500B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE4A015-D169-4124-B3D4-77BF91C4500B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE4A015-D169-4124-B3D4-77BF91C4500B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
