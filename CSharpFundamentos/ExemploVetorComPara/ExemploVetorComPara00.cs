@@ -27,4 +27,10 @@ namespace ExemploVetorComPara
     }
 }
 // https://dontpad.com/franciscosensaulas/c#
-// Ex. 1: Solicitar o nome do remédio  
+// Ex. 1: Solicitar o nome do remédio e seu preço, armazenando em dois vetores
+
+// Ex. 2: Solicitar 20 números, apresentando:
+// Quantidade de pares
+// Quantidade de ímpares
+// Quantidade de negativos
+// Soma dos números
