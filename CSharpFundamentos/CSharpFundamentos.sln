@@ -43,13 +43,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - Orientacao Objetos", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 - Vetor", "09 - Vetor", "{AC66553D-2F3A-454D-ADD6-23073AA2753F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploVetor", "ExemploVetor\ExemploVetor.csproj", "{7A6C359A-1F4E-4979-9D30-BE0A6587DDF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploVetor", "ExemploVetor\ExemploVetor.csproj", "{7A6C359A-1F4E-4979-9D30-BE0A6587DDF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploVetorComPara", "ExemploVetorComPara\ExemploVetorComPara.csproj", "{59617986-2195-4800-8FC2-69E2D3EF1448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploVetorComPara", "ExemploVetorComPara\ExemploVetorComPara.csproj", "{59617986-2195-4800-8FC2-69E2D3EF1448}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - BibliotecaExterna", "10 - BibliotecaExterna", "{F7532A7D-1594-4502-9CEE-C9A5444C96BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploSpectreConsole", "ExemploSpectreConsole\ExemploSpectreConsole.csproj", "{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploSpectreConsole", "ExemploSpectreConsole\ExemploSpectreConsole.csproj", "{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploPropriedades", "ExemploPropriedades\ExemploPropriedades.csproj", "{3EC53067-0D6B-4362-AC57-979803ECF1EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC53067-0D6B-4362-AC57-979803ECF1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC53067-0D6B-4362-AC57-979803ECF1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC53067-0D6B-4362-AC57-979803ECF1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC53067-0D6B-4362-AC57-979803ECF1EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +133,7 @@ Global
 		{7A6C359A-1F4E-4979-9D30-BE0A6587DDF5} = {AC66553D-2F3A-454D-ADD6-23073AA2753F}
 		{59617986-2195-4800-8FC2-69E2D3EF1448} = {AC66553D-2F3A-454D-ADD6-23073AA2753F}
 		{4FA64468-035C-4A23-B1C2-D44BEBB3CB5E} = {F7532A7D-1594-4502-9CEE-C9A5444C96BB}
+		{3EC53067-0D6B-4362-AC57-979803ECF1EB} = {5A1AC959-2EE5-4AA5-A65D-70E4CE316428}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {07780032-DE6F-422B-881A-DA4C83DFB192}
