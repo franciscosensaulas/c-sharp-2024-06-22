@@ -52,21 +52,24 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
             buttonSalvar.Location = new Point(379, 65);
             buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(130, 53);
+            buttonSalvar.Size = new Size(130, 55);
             buttonSalvar.TabIndex = 2;
             buttonSalvar.Text = "Salvar";
+            buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = true;
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(234, 65);
+            buttonCancelar.Image = Properties.Resources.close_32;
+            buttonCancelar.Location = new Point(243, 65);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.Size = new Size(130, 55);
             buttonCancelar.TabIndex = 3;
             buttonCancelar.Text = "Cancelar";
+            buttonCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonCancelar.UseVisualStyleBackColor = true;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
@@ -74,7 +77,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(521, 145);
+            ClientSize = new Size(521, 133);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
             Controls.Add(textBoxNome);

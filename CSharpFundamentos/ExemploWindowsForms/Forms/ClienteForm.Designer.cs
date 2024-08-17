@@ -47,11 +47,11 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnCpf, ColumnEndereco });
-            dataGridView1.Location = new Point(12, 47);
+            dataGridView1.Location = new Point(12, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(776, 391);
+            dataGridView1.Size = new Size(776, 368);
             dataGridView1.TabIndex = 0;
             // 
             // ColumnId
@@ -104,37 +104,37 @@
             // 
             // buttonCadastrar
             // 
-            buttonCadastrar.Location = new Point(694, 12);
+            buttonCadastrar.Image = Properties.Resources.add_32;
+            buttonCadastrar.Location = new Point(733, 9);
             buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(94, 29);
+            buttonCadastrar.Size = new Size(55, 55);
             buttonCadastrar.TabIndex = 3;
-            buttonCadastrar.Text = "Cadastrar";
             buttonCadastrar.UseVisualStyleBackColor = true;
             buttonCadastrar.Click += buttonCadastrar_Click;
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(594, 12);
+            buttonEditar.Image = Properties.Resources.pencil_32;
+            buttonEditar.Location = new Point(672, 9);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(94, 29);
+            buttonEditar.Size = new Size(55, 55);
             buttonEditar.TabIndex = 4;
-            buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
             // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(494, 12);
+            buttonApagar.Image = Properties.Resources.recycle_bin_32;
+            buttonApagar.Location = new Point(611, 9);
             buttonApagar.Name = "buttonApagar";
-            buttonApagar.Size = new Size(94, 29);
+            buttonApagar.Size = new Size(55, 55);
             buttonApagar.TabIndex = 5;
-            buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
             // 
             // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(805, 450);
             Controls.Add(buttonApagar);
             Controls.Add(buttonEditar);
             Controls.Add(buttonCadastrar);

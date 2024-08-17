@@ -49,6 +49,7 @@
             resources.ApplyResources(dataGridViewCategorias, "dataGridViewCategorias");
             dataGridViewCategorias.Name = "dataGridViewCategorias";
             dataGridViewCategorias.ReadOnly = true;
+            dataGridViewCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             // 
             // ColumnId
             // 
@@ -65,15 +66,19 @@
             // 
             // buttonEditar
             // 
+            buttonEditar.Image = Properties.Resources.pencil_32;
             resources.ApplyResources(buttonEditar, "buttonEditar");
             buttonEditar.Name = "buttonEditar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
+            buttonApagar.Image = Properties.Resources.recycle_bin_32;
             resources.ApplyResources(buttonApagar, "buttonApagar");
             buttonApagar.Name = "buttonApagar";
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // labelNome
             // 
@@ -87,9 +92,11 @@
             // 
             // buttonSalvar
             // 
+            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
             resources.ApplyResources(buttonSalvar, "buttonSalvar");
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // CategoriaForm
             // 
@@ -102,6 +109,7 @@
             Controls.Add(buttonEditar);
             Controls.Add(dataGridViewCategorias);
             Name = "CategoriaForm";
+            Load += CategoriaForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();

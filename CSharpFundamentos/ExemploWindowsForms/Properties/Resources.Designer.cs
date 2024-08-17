@@ -63,6 +63,16 @@ namespace ExemploWindowsForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_24 {
+            get {
+                object obj = ResourceManager.GetObject("add 24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_32 {
             get {
                 object obj = ResourceManager.GetObject("add 32", resourceCulture);
@@ -113,6 +123,16 @@ namespace ExemploWindowsForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_32 {
+            get {
+                object obj = ResourceManager.GetObject("close 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dairy_products_128 {
             get {
                 object obj = ResourceManager.GetObject("dairy-products 128", resourceCulture);
@@ -126,6 +146,16 @@ namespace ExemploWindowsForms.Properties {
         internal static System.Drawing.Bitmap dairy_products_64 {
             get {
                 object obj = ResourceManager.GetObject("dairy-products 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk_32 {
+            get {
+                object obj = ResourceManager.GetObject("floppy-disk 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace ExemploWindowsForms.Properties {
         internal static System.Drawing.Bitmap recycle_bin_64 {
             get {
                 object obj = ResourceManager.GetObject("recycle-bin 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_32 {
+            get {
+                object obj = ResourceManager.GetObject("search 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

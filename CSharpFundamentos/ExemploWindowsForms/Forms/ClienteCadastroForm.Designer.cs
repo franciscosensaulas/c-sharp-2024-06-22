@@ -80,10 +80,10 @@
             // maskedTextBoxCpf
             // 
             maskedTextBoxCpf.Location = new Point(12, 91);
+            maskedTextBoxCpf.Mask = "000\\.000\\.000\\-00";
             maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             maskedTextBoxCpf.Size = new Size(246, 27);
             maskedTextBoxCpf.TabIndex = 4;
-            maskedTextBoxCpf.Text = "masked";
             // 
             // labelEmail
             // 
@@ -163,10 +163,11 @@
             // maskedTextBoxCep
             // 
             maskedTextBoxCep.Location = new Point(12, 198);
+            maskedTextBoxCep.Mask = "00\\.000\\-000";
             maskedTextBoxCep.Name = "maskedTextBoxCep";
+            maskedTextBoxCep.RejectInputOnFirstFailure = true;
             maskedTextBoxCep.Size = new Size(177, 27);
             maskedTextBoxCep.TabIndex = 14;
-            maskedTextBoxCep.Text = "masked";
             // 
             // labelNumero
             // 
@@ -199,7 +200,7 @@
             richTextBoxDescricao.Name = "richTextBoxDescricao";
             richTextBoxDescricao.Size = new Size(616, 120);
             richTextBoxDescricao.TabIndex = 18;
-            richTextBoxDescricao.Text = "richTextBox";
+            richTextBoxDescricao.Text = "";
             // 
             // labelDescrição
             // 
@@ -219,27 +220,31 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(534, 430);
+            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
+            buttonSalvar.Location = new Point(498, 430);
             buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(94, 29);
+            buttonSalvar.Size = new Size(130, 55);
             buttonSalvar.TabIndex = 21;
             buttonSalvar.Text = "Salvar";
+            buttonSalvar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonSalvar.UseVisualStyleBackColor = true;
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(424, 430);
+            buttonCancelar.Image = Properties.Resources.close_32;
+            buttonCancelar.Location = new Point(353, 430);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.Size = new Size(130, 55);
             buttonCancelar.TabIndex = 22;
             buttonCancelar.Text = "Cancelar";
+            buttonCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // ClienteCadastroForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(642, 478);
+            ClientSize = new Size(642, 501);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
             Controls.Add(textBoxComplemento);
@@ -263,6 +268,7 @@
             Controls.Add(textBoxNome);
             Controls.Add(labelNome);
             Name = "ClienteCadastroForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema - Cliente Cadastro";
             ResumeLayout(false);
             PerformLayout();

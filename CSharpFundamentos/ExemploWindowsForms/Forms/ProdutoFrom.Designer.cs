@@ -74,11 +74,11 @@
             dataGridViewProdutos.AllowUserToDeleteRows = false;
             dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProdutos.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnCategoria, ColumnQuantidadeEstoque, ColumnPrecoUnitario });
-            dataGridViewProdutos.Location = new Point(12, 112);
+            dataGridViewProdutos.Location = new Point(12, 164);
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.ReadOnly = true;
             dataGridViewProdutos.RowHeadersWidth = 51;
-            dataGridViewProdutos.Size = new Size(913, 519);
+            dataGridViewProdutos.Size = new Size(913, 467);
             dataGridViewProdutos.TabIndex = 0;
             // 
             // ColumnId
@@ -143,7 +143,7 @@
             // 
             textBoxFiltroNome.Location = new Point(263, 58);
             textBoxFiltroNome.Name = "textBoxFiltroNome";
-            textBoxFiltroNome.Size = new Size(478, 27);
+            textBoxFiltroNome.Size = new Size(606, 27);
             textBoxFiltroNome.TabIndex = 3;
             // 
             // labelTotal
@@ -158,7 +158,7 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(1079, 11);
+            labelNome.Location = new Point(946, 2);
             labelNome.Name = "labelNome";
             labelNome.Size = new Size(50, 20);
             labelNome.TabIndex = 5;
@@ -166,16 +166,16 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Location = new Point(1456, 338);
+            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
+            buttonSalvar.Location = new Point(1369, 296);
             buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(94, 29);
+            buttonSalvar.Size = new Size(48, 48);
             buttonSalvar.TabIndex = 6;
-            buttonSalvar.Text = "Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(1079, 34);
+            textBoxNome.Location = new Point(946, 25);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(471, 27);
             textBoxNome.TabIndex = 7;
@@ -183,7 +183,7 @@
             // radioButtonHabilitadoVendaSim
             // 
             radioButtonHabilitadoVendaSim.AutoSize = true;
-            radioButtonHabilitadoVendaSim.Location = new Point(1301, 222);
+            radioButtonHabilitadoVendaSim.Location = new Point(1168, 213);
             radioButtonHabilitadoVendaSim.Name = "radioButtonHabilitadoVendaSim";
             radioButtonHabilitadoVendaSim.Size = new Size(55, 24);
             radioButtonHabilitadoVendaSim.TabIndex = 8;
@@ -194,7 +194,7 @@
             // radioButtonHabilitadoVendaNao
             // 
             radioButtonHabilitadoVendaNao.AutoSize = true;
-            radioButtonHabilitadoVendaNao.Location = new Point(1301, 251);
+            radioButtonHabilitadoVendaNao.Location = new Point(1168, 242);
             radioButtonHabilitadoVendaNao.Name = "radioButtonHabilitadoVendaNao";
             radioButtonHabilitadoVendaNao.Size = new Size(58, 24);
             radioButtonHabilitadoVendaNao.TabIndex = 9;
@@ -205,7 +205,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(1079, 222);
+            checkBox1.Location = new Point(946, 213);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(101, 24);
             checkBox1.TabIndex = 10;
@@ -215,7 +215,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(1079, 252);
+            checkBox2.Location = new Point(946, 243);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(101, 24);
             checkBox2.TabIndex = 11;
@@ -225,7 +225,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(1079, 282);
+            checkBox3.Location = new Point(946, 273);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(101, 24);
             checkBox3.TabIndex = 12;
@@ -235,7 +235,7 @@
             // labelCategoria
             // 
             labelCategoria.AutoSize = true;
-            labelCategoria.Location = new Point(1079, 75);
+            labelCategoria.Location = new Point(946, 66);
             labelCategoria.Name = "labelCategoria";
             labelCategoria.Size = new Size(74, 20);
             labelCategoria.TabIndex = 13;
@@ -244,25 +244,25 @@
             // comboBoxCategoria
             // 
             comboBoxCategoria.FormattingEnabled = true;
-            comboBoxCategoria.Location = new Point(1079, 98);
+            comboBoxCategoria.Location = new Point(946, 89);
             comboBoxCategoria.Name = "comboBoxCategoria";
-            comboBoxCategoria.Size = new Size(405, 28);
+            comboBoxCategoria.Size = new Size(430, 28);
             comboBoxCategoria.TabIndex = 14;
             // 
             // buttonCadastrarCategoria
             // 
-            buttonCadastrarCategoria.Location = new Point(1490, 98);
+            buttonCadastrarCategoria.Image = Properties.Resources.add_24;
+            buttonCadastrarCategoria.Location = new Point(1382, 85);
             buttonCadastrarCategoria.Name = "buttonCadastrarCategoria";
-            buttonCadastrarCategoria.Size = new Size(60, 28);
+            buttonCadastrarCategoria.Size = new Size(35, 35);
             buttonCadastrarCategoria.TabIndex = 15;
-            buttonCadastrarCategoria.Text = "Nova";
             buttonCadastrarCategoria.UseVisualStyleBackColor = true;
             buttonCadastrarCategoria.Click += buttonCadastrarCategoria_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(1079, 199);
+            label6.Location = new Point(946, 190);
             label6.Name = "label6";
             label6.Size = new Size(50, 20);
             label6.TabIndex = 16;
@@ -271,7 +271,7 @@
             // labelHabilitadoVenda
             // 
             labelHabilitadoVenda.AutoSize = true;
-            labelHabilitadoVenda.Location = new Point(1301, 199);
+            labelHabilitadoVenda.Location = new Point(1168, 190);
             labelHabilitadoVenda.Name = "labelHabilitadoVenda";
             labelHabilitadoVenda.Size = new Size(125, 20);
             labelHabilitadoVenda.TabIndex = 17;
@@ -280,7 +280,7 @@
             // labelPrecoUnitario
             // 
             labelPrecoUnitario.AutoSize = true;
-            labelPrecoUnitario.Location = new Point(1298, 141);
+            labelPrecoUnitario.Location = new Point(1165, 132);
             labelPrecoUnitario.Name = "labelPrecoUnitario";
             labelPrecoUnitario.Size = new Size(103, 20);
             labelPrecoUnitario.TabIndex = 18;
@@ -288,18 +288,18 @@
             // 
             // maskedTextBoxPrecoUnitario
             // 
-            maskedTextBoxPrecoUnitario.Location = new Point(1298, 164);
+            maskedTextBoxPrecoUnitario.Location = new Point(1165, 155);
             maskedTextBoxPrecoUnitario.Name = "maskedTextBoxPrecoUnitario";
             maskedTextBoxPrecoUnitario.Size = new Size(252, 27);
             maskedTextBoxPrecoUnitario.TabIndex = 19;
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(1356, 338);
+            buttonCancelar.Image = Properties.Resources.close_32;
+            buttonCancelar.Location = new Point(1315, 296);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.Size = new Size(48, 48);
             buttonCancelar.TabIndex = 20;
-            buttonCancelar.Text = "Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // labelValorTotal
@@ -314,7 +314,7 @@
             // labelQuantidadeEstoque
             // 
             labelQuantidadeEstoque.AutoSize = true;
-            labelQuantidadeEstoque.Location = new Point(1079, 138);
+            labelQuantidadeEstoque.Location = new Point(946, 129);
             labelQuantidadeEstoque.Name = "labelQuantidadeEstoque";
             labelQuantidadeEstoque.Size = new Size(144, 20);
             labelQuantidadeEstoque.TabIndex = 22;
@@ -322,27 +322,27 @@
             // 
             // numericUpDownQuantidadeEstoque
             // 
-            numericUpDownQuantidadeEstoque.Location = new Point(1079, 164);
+            numericUpDownQuantidadeEstoque.Location = new Point(946, 155);
             numericUpDownQuantidadeEstoque.Name = "numericUpDownQuantidadeEstoque";
             numericUpDownQuantidadeEstoque.Size = new Size(200, 27);
             numericUpDownQuantidadeEstoque.TabIndex = 23;
             // 
             // buttonEditar
             // 
-            buttonEditar.Location = new Point(950, 109);
+            buttonEditar.Image = Properties.Resources.pencil_32;
+            buttonEditar.Location = new Point(820, 112);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(94, 29);
+            buttonEditar.Size = new Size(48, 48);
             buttonEditar.TabIndex = 24;
-            buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
             // 
             // buttonApagar
             // 
-            buttonApagar.Location = new Point(950, 144);
+            buttonApagar.Image = Properties.Resources.recycle_bin_32;
+            buttonApagar.Location = new Point(874, 112);
             buttonApagar.Name = "buttonApagar";
-            buttonApagar.Size = new Size(94, 29);
+            buttonApagar.Size = new Size(48, 48);
             buttonApagar.TabIndex = 25;
-            buttonApagar.Text = "Apagar";
             buttonApagar.UseVisualStyleBackColor = true;
             // 
             // labelFiltroCategoria
@@ -377,18 +377,18 @@
             // 
             // buttonPesquisar
             // 
-            buttonPesquisar.Location = new Point(747, 59);
+            buttonPesquisar.Image = Properties.Resources.search_32;
+            buttonPesquisar.Location = new Point(875, 54);
             buttonPesquisar.Name = "buttonPesquisar";
-            buttonPesquisar.Size = new Size(151, 27);
+            buttonPesquisar.Size = new Size(35, 35);
             buttonPesquisar.TabIndex = 28;
-            buttonPesquisar.Text = "Pesquisar";
             buttonPesquisar.UseVisualStyleBackColor = true;
             // 
             // ProdutoFrom
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1581, 660);
+            ClientSize = new Size(1433, 660);
             Controls.Add(panel1);
             Controls.Add(buttonApagar);
             Controls.Add(buttonEditar);

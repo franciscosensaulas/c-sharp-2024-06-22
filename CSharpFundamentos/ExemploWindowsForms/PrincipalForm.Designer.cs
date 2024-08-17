@@ -36,18 +36,22 @@
             // 
             // buttonCalculadora
             // 
+            buttonCalculadora.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonCalculadora.Image = Properties.Resources.calculator_64;
             buttonCalculadora.Location = new Point(11, 11);
             buttonCalculadora.Margin = new Padding(2);
             buttonCalculadora.Name = "buttonCalculadora";
-            buttonCalculadora.Size = new Size(370, 67);
+            buttonCalculadora.Size = new Size(370, 86);
             buttonCalculadora.TabIndex = 0;
             buttonCalculadora.Text = "Calculadora";
+            buttonCalculadora.TextAlign = ContentAlignment.MiddleRight;
+            buttonCalculadora.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonCalculadora.UseVisualStyleBackColor = true;
             buttonCalculadora.Click += button1_Click;
             // 
             // buttonCategoria
             // 
+            buttonCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonCategoria.Image = Properties.Resources.categories_64;
             buttonCategoria.Location = new Point(12, 458);
             buttonCategoria.Name = "buttonCategoria";
@@ -62,6 +66,7 @@
             // 
             // buttonProduto
             // 
+            buttonProduto.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonProduto.Image = Properties.Resources.dairy_products_64;
             buttonProduto.Location = new Point(261, 458);
             buttonProduto.Name = "buttonProduto";
@@ -75,6 +80,7 @@
             // 
             // buttonCliente
             // 
+            buttonCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             buttonCliente.Image = Properties.Resources.people_64;
             buttonCliente.Location = new Point(135, 458);
             buttonCliente.Name = "buttonCliente";
@@ -90,7 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(574, 594);
+            ClientSize = new Size(396, 594);
             Controls.Add(buttonCliente);
             Controls.Add(buttonProduto);
             Controls.Add(buttonCategoria);
@@ -98,7 +104,7 @@
             Margin = new Padding(2);
             Name = "PrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Sistema";
             ResumeLayout(false);
         }
 
