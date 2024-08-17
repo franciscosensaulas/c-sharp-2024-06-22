@@ -52,7 +52,6 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Image = Properties.Resources.add_32;
             buttonSalvar.ImageAlign = ContentAlignment.MiddleLeft;
             buttonSalvar.Location = new Point(379, 65);
             buttonSalvar.Name = "buttonSalvar";

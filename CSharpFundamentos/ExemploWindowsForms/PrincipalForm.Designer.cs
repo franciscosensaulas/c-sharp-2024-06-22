@@ -36,10 +36,11 @@
             // 
             // buttonCalculadora
             // 
+            buttonCalculadora.Image = Properties.Resources.calculator_64;
             buttonCalculadora.Location = new Point(11, 11);
             buttonCalculadora.Margin = new Padding(2);
             buttonCalculadora.Name = "buttonCalculadora";
-            buttonCalculadora.Size = new Size(320, 67);
+            buttonCalculadora.Size = new Size(370, 67);
             buttonCalculadora.TabIndex = 0;
             buttonCalculadora.Text = "Calculadora";
             buttonCalculadora.UseVisualStyleBackColor = true;
@@ -47,31 +48,41 @@
             // 
             // buttonCategoria
             // 
-            buttonCategoria.Location = new Point(11, 440);
+            buttonCategoria.Image = Properties.Resources.categories_64;
+            buttonCategoria.Location = new Point(12, 458);
             buttonCategoria.Name = "buttonCategoria";
-            buttonCategoria.Size = new Size(170, 142);
+            buttonCategoria.Padding = new Padding(0, 15, 0, 0);
+            buttonCategoria.Size = new Size(120, 120);
             buttonCategoria.TabIndex = 1;
             buttonCategoria.Text = "Categoria";
+            buttonCategoria.TextAlign = ContentAlignment.BottomCenter;
+            buttonCategoria.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonCategoria.UseVisualStyleBackColor = true;
             buttonCategoria.Click += buttonCategoria_Click;
             // 
             // buttonProduto
             // 
-            buttonProduto.Location = new Point(371, 480);
+            buttonProduto.Image = Properties.Resources.dairy_products_64;
+            buttonProduto.Location = new Point(261, 458);
             buttonProduto.Name = "buttonProduto";
-            buttonProduto.Size = new Size(94, 83);
+            buttonProduto.Padding = new Padding(0, 15, 0, 0);
+            buttonProduto.Size = new Size(120, 120);
             buttonProduto.TabIndex = 2;
             buttonProduto.Text = "Produto";
+            buttonProduto.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonProduto.UseVisualStyleBackColor = true;
             buttonProduto.Click += buttonProduto_Click;
             // 
             // buttonCliente
             // 
-            buttonCliente.Location = new Point(257, 480);
+            buttonCliente.Image = Properties.Resources.people_64;
+            buttonCliente.Location = new Point(135, 458);
             buttonCliente.Name = "buttonCliente";
-            buttonCliente.Size = new Size(94, 83);
+            buttonCliente.Padding = new Padding(0, 15, 0, 0);
+            buttonCliente.Size = new Size(120, 120);
             buttonCliente.TabIndex = 3;
             buttonCliente.Text = "Cliente";
+            buttonCliente.TextImageRelation = TextImageRelation.ImageAboveText;
             buttonCliente.UseVisualStyleBackColor = true;
             buttonCliente.Click += buttonCliente_Click;
             // 
