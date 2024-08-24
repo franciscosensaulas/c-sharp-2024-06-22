@@ -44,12 +44,13 @@
             // 
             dataGridViewCategorias.AllowUserToAddRows = false;
             dataGridViewCategorias.AllowUserToDeleteRows = false;
+            resources.ApplyResources(dataGridViewCategorias, "dataGridViewCategorias");
             dataGridViewCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCategorias.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome });
-            resources.ApplyResources(dataGridViewCategorias, "dataGridViewCategorias");
             dataGridViewCategorias.Name = "dataGridViewCategorias";
             dataGridViewCategorias.ReadOnly = true;
             dataGridViewCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewCategorias.CellContentClick += dataGridViewCategorias_CellContentClick;
             // 
             // ColumnId
             // 
@@ -66,16 +67,16 @@
             // 
             // buttonEditar
             // 
-            buttonEditar.Image = Properties.Resources.pencil_32;
             resources.ApplyResources(buttonEditar, "buttonEditar");
+            buttonEditar.Image = Properties.Resources.pencil_32;
             buttonEditar.Name = "buttonEditar";
             buttonEditar.UseVisualStyleBackColor = true;
             buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
-            buttonApagar.Image = Properties.Resources.recycle_bin_32;
             resources.ApplyResources(buttonApagar, "buttonApagar");
+            buttonApagar.Image = Properties.Resources.recycle_bin_32;
             buttonApagar.Name = "buttonApagar";
             buttonApagar.UseVisualStyleBackColor = true;
             buttonApagar.Click += buttonApagar_Click;
@@ -92,8 +93,8 @@
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
             resources.ApplyResources(buttonSalvar, "buttonSalvar");
+            buttonSalvar.Image = Properties.Resources.floppy_disk_32;
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.UseVisualStyleBackColor = true;
             buttonSalvar.Click += buttonSalvar_Click;
@@ -109,6 +110,7 @@
             Controls.Add(buttonEditar);
             Controls.Add(dataGridViewCategorias);
             Name = "CategoriaForm";
+            Activated += CategoriaForm_Activated;
             Load += CategoriaForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCategorias).EndInit();
             ResumeLayout(false);

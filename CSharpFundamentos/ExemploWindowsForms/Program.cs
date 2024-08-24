@@ -1,3 +1,5 @@
+using ExemploWindowsForms.Forms;
+
 namespace ExemploWindowsForms
 {
     internal static class Program

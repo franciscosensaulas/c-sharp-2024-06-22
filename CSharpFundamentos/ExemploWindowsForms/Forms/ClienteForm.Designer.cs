@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridViewClientes = new DataGridView();
             ColumnId = new DataGridViewTextBoxColumn();
             ColumnNome = new DataGridViewTextBoxColumn();
             ColumnCpf = new DataGridViewTextBoxColumn();
@@ -38,21 +38,23 @@
             buttonCadastrar = new Button();
             buttonEditar = new Button();
             buttonApagar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewClientes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnCpf, ColumnEndereco });
-            dataGridView1.Location = new Point(12, 70);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(776, 368);
-            dataGridView1.TabIndex = 0;
+            dataGridViewClientes.AllowUserToAddRows = false;
+            dataGridViewClientes.AllowUserToDeleteRows = false;
+            dataGridViewClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClientes.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnCpf, ColumnEndereco });
+            dataGridViewClientes.Location = new Point(12, 70);
+            dataGridViewClientes.Name = "dataGridViewClientes";
+            dataGridViewClientes.ReadOnly = true;
+            dataGridViewClientes.RowHeadersWidth = 51;
+            dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewClientes.Size = new Size(776, 368);
+            dataGridViewClientes.TabIndex = 0;
             // 
             // ColumnId
             // 
@@ -97,6 +99,7 @@
             // 
             // textBoxPesquisa
             // 
+            textBoxPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxPesquisa.Location = new Point(83, 13);
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(348, 27);
@@ -104,6 +107,7 @@
             // 
             // buttonCadastrar
             // 
+            buttonCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCadastrar.Image = Properties.Resources.add_32;
             buttonCadastrar.Location = new Point(733, 9);
             buttonCadastrar.Name = "buttonCadastrar";
@@ -114,6 +118,7 @@
             // 
             // buttonEditar
             // 
+            buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonEditar.Image = Properties.Resources.pencil_32;
             buttonEditar.Location = new Point(672, 9);
             buttonEditar.Name = "buttonEditar";
@@ -123,6 +128,7 @@
             // 
             // buttonApagar
             // 
+            buttonApagar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonApagar.Image = Properties.Resources.recycle_bin_32;
             buttonApagar.Location = new Point(611, 9);
             buttonApagar.Name = "buttonApagar";
@@ -140,18 +146,19 @@
             Controls.Add(buttonCadastrar);
             Controls.Add(textBoxPesquisa);
             Controls.Add(labelPesquisa);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewClientes);
             Name = "ClienteForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema - Clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Activated += ClienteForm_Activated;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewClientes;
         private Label labelPesquisa;
         private TextBox textBoxPesquisa;
         private Button buttonCadastrar;

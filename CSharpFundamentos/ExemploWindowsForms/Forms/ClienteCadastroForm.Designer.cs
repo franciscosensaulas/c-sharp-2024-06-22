@@ -50,6 +50,8 @@
             textBoxComplemento = new TextBox();
             buttonSalvar = new Button();
             buttonCancelar = new Button();
+            textBoxLogradouro = new TextBox();
+            labelLogradouro = new Label();
             SuspendLayout();
             // 
             // labelNome
@@ -113,6 +115,7 @@
             // comboBoxUf
             // 
             comboBoxUf.FormattingEnabled = true;
+            comboBoxUf.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
             comboBoxUf.Location = new Point(12, 144);
             comboBoxUf.Name = "comboBoxUf";
             comboBoxUf.Size = new Size(115, 28);
@@ -153,7 +156,7 @@
             // labelCep
             // 
             labelCep.AutoSize = true;
-            labelCep.Location = new Point(12, 175);
+            labelCep.Location = new Point(382, 175);
             labelCep.Name = "labelCep";
             labelCep.Size = new Size(34, 20);
             labelCep.TabIndex = 13;
@@ -162,17 +165,17 @@
             // 
             // maskedTextBoxCep
             // 
-            maskedTextBoxCep.Location = new Point(12, 198);
+            maskedTextBoxCep.Location = new Point(382, 198);
             maskedTextBoxCep.Mask = "00\\.000\\-000";
             maskedTextBoxCep.Name = "maskedTextBoxCep";
             maskedTextBoxCep.RejectInputOnFirstFailure = true;
-            maskedTextBoxCep.Size = new Size(177, 27);
+            maskedTextBoxCep.Size = new Size(110, 27);
             maskedTextBoxCep.TabIndex = 14;
             // 
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Location = new Point(208, 175);
+            labelNumero.Location = new Point(498, 174);
             labelNumero.Name = "labelNumero";
             labelNumero.Size = new Size(63, 20);
             labelNumero.TabIndex = 15;
@@ -180,9 +183,9 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(208, 198);
+            textBox1.Location = new Point(498, 198);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(420, 27);
+            textBox1.Size = new Size(130, 27);
             textBox1.TabIndex = 16;
             // 
             // labelComplemento
@@ -240,11 +243,29 @@
             buttonCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonCancelar.UseVisualStyleBackColor = true;
             // 
+            // textBoxLogradouro
+            // 
+            textBoxLogradouro.Location = new Point(12, 198);
+            textBoxLogradouro.Name = "textBoxLogradouro";
+            textBoxLogradouro.Size = new Size(355, 27);
+            textBoxLogradouro.TabIndex = 23;
+            // 
+            // labelLogradouro
+            // 
+            labelLogradouro.AutoSize = true;
+            labelLogradouro.Location = new Point(12, 175);
+            labelLogradouro.Name = "labelLogradouro";
+            labelLogradouro.Size = new Size(87, 20);
+            labelLogradouro.TabIndex = 24;
+            labelLogradouro.Text = "Logradouro";
+            // 
             // ClienteCadastroForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(642, 501);
+            Controls.Add(labelLogradouro);
+            Controls.Add(textBoxLogradouro);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
             Controls.Add(textBoxComplemento);
@@ -298,5 +319,7 @@
         private TextBox textBoxComplemento;
         private Button buttonSalvar;
         private Button buttonCancelar;
+        private TextBox textBoxLogradouro;
+        private Label labelLogradouro;
     }
 }

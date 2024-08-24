@@ -1,46 +1,42 @@
-﻿using ExemploWindowsForms.BancoDados;
+﻿using ExemploWindowsForms.Entidades;
+using ExemploWindowsForms.Repositorios;
 using System.Data;
 
 namespace ExemploWindowsForms.Forms
 {
     public partial class CategoriaForm : Form
     {
+        private readonly CategoriaRepositorio _categoriaRepositorio;
         private int idParaEditar = -1;
 
         public CategoriaForm()
         {
+            _categoriaRepositorio = new CategoriaRepositorio();
+
             InitializeComponent();
         }
 
         private void CategoriaForm_Load(object sender, EventArgs e)
         {
-            CarregarCategorias();
         }
 
         private void CarregarCategorias()
         {
-            var conexao = new Conexao().Conectar();
-            var comando = conexao.CreateCommand();
-            // Consultar os registros das categorias ordenadas por nome
-            comando.CommandText = "SELECT id, nome FROM categorias ORDER BY nome";
-            var tabelaEmMemoria = new DataTable();
-            tabelaEmMemoria.Load(comando.ExecuteReader());
-            comando.Connection.Close();
-
             // Limpar os registros do data grid view(tabela visual de categorias)
             dataGridViewCategorias.Rows.Clear();
 
-            //for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
+            var categorias = _categoriaRepositorio.ObterTodos();
+            //for (int i = 0; i < categorias.Count; i++)
             //{
-            //    DataRow registro = tabelaEmMemoria.Rows[i];
+            //    var categoria = categorias[i];
             //}
 
             // Percorrer cada um dos registros que encontrou na consulta (select) que foi executada
-            foreach (DataRow registro in tabelaEmMemoria.Rows)
+            foreach (var categoria in categorias)
             {
                 dataGridViewCategorias.Rows.Add(new object[]{
-                    registro["id"],
-                    registro["nome"]
+                    categoria.Id,
+                    categoria.Nome
                 });
             }
         }
@@ -71,31 +67,25 @@ namespace ExemploWindowsForms.Forms
                 return;
             }
 
-            // Abrir conexão com o banco de dados
-            var conexao = new Conexao().Conectar();
-            // Criar comando que permite definirmos qual o sql será executado
-            var comando = conexao.CreateCommand();
+            var categoria = new Categoria();
+            categoria.Nome = nome;
+
             string mensagemFeedback = "";
             if (idParaEditar == -1)
             {
-                // Definir o comando de insert que será executado na tabela de categorias
-                comando.CommandText = "INSERT INTO categorias VALUES (@NOME)";
-                // Substituir o @NOME com o nome que o usuário digitou no campo
-                comando.Parameters.AddWithValue("@NOME", nome);
+                _categoriaRepositorio.Adicionar(categoria);
                 mensagemFeedback = "Categoria cadastrada com sucesso";
             }
             else
             {
-                comando.CommandText = "UPDATE categorias SET nome = @NOME WHERE id = @ID";
-                comando.Parameters.AddWithValue("@NOME", nome);
-                comando.Parameters.AddWithValue("@ID", idParaEditar);
+                categoria.Id = idParaEditar;
+                _categoriaRepositorio.Editar(categoria);
                 mensagemFeedback = "Categoria alterada com sucesso";
                 idParaEditar = -1;
             }
-            // Executa o comando
-            comando.ExecuteNonQuery();
-            // Fechar a conexão com o banco de dados
-            conexao.Close();
+
+            textBoxNome.Clear();
+
             // Realizar a consulta na tabela de categorias atualizando o
             // datagridview com o novo registro
             CarregarCategorias();
@@ -122,18 +112,8 @@ namespace ExemploWindowsForms.Forms
             if (desejaRealmenteApagar == DialogResult.No)
                 return;
 
-            // Abrir conexão com o banco de dados
-            var conexao = new Conexao().Conectar();
-            // Criar comando que permite definirmos qual o sql será executado
-            var comando = conexao.CreateCommand();
-            // Definir o comando de delete que será executado na tabela de categorias
-            comando.CommandText = "DELETE FROM categorias WHERE id = @ID";
-            // Substituir o @NOME com o nome que o usuário selecionou
-            comando.Parameters.AddWithValue("@ID", idParaApagar);
-            // Executa o comando
-            comando.ExecuteNonQuery();
-            // Fechar a conexão com o banco de dados
-            conexao.Close();
+            _categoriaRepositorio.Apagar(idParaApagar);
+
             // Realizar a consulta na tabela de categorias atualziando o
             // datagridview sem o registro apagado
             CarregarCategorias();
@@ -150,22 +130,25 @@ namespace ExemploWindowsForms.Forms
             var linhaSelecionada = dataGridViewCategorias.Rows[indiceLinhaSelecionada];
             idParaEditar = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
 
-            var conexao = new Conexao().Conectar();
-            var comando = conexao.CreateCommand();
-            comando.CommandText = "SELECT id, nome FROM categorias WHERE id = @ID";
-            comando.Parameters.AddWithValue("@ID", idParaEditar);
-            var tabelaEmMemoria = new DataTable();
-            tabelaEmMemoria.Load(comando.ExecuteReader());
-            if (tabelaEmMemoria.Rows.Count < 0){
+            var categoria = _categoriaRepositorio.ObterPorId(idParaEditar);
+
+            if (categoria is null)
+            {
                 MessageBox.Show("Categoria não existe");
                 return;
             }
 
-            var registro = tabelaEmMemoria.Rows[0];
-            var nome = registro["nome"].ToString();
-            textBoxNome.Text = nome;
+            textBoxNome.Text = categoria.Nome;
+        }
 
-            conexao.Close();
+        private void CategoriaForm_Activated(object sender, EventArgs e)
+        {
+            CarregarCategorias();
+        }
+
+        private void dataGridViewCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

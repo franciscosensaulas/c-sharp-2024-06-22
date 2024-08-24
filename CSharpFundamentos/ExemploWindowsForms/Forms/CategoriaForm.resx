@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridViewCategorias.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <metadata name="ColumnId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -164,6 +168,9 @@
   <data name="&gt;&gt;dataGridViewCategorias.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="buttonEditar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="buttonEditar.Location" type="System.Drawing.Point, System.Drawing">
     <value>510, 9</value>
   </data>
@@ -176,7 +183,6 @@
   <data name="buttonEditar.Text" xml:space="preserve">
     <value>Editar</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonEditar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="&gt;&gt;buttonEditar.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="buttonApagar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="buttonApagar.Location" type="System.Drawing.Point, System.Drawing">
     <value>646, 9</value>
@@ -219,6 +228,9 @@
   <data name="&gt;&gt;buttonApagar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="labelNome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="labelNome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -246,6 +258,9 @@
   <data name="&gt;&gt;labelNome.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="textBoxNome.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="textBoxNome.Location" type="System.Drawing.Point, System.Drawing">
     <value>794, 37</value>
   </data>
@@ -266,6 +281,9 @@
   </data>
   <data name="&gt;&gt;textBoxNome.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="buttonSalvar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="buttonSalvar.Location" type="System.Drawing.Point, System.Drawing">
     <value>1197, 70</value>

@@ -78,6 +78,7 @@
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.ReadOnly = true;
             dataGridViewProdutos.RowHeadersWidth = 51;
+            dataGridViewProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewProdutos.Size = new Size(913, 467);
             dataGridViewProdutos.TabIndex = 0;
             // 

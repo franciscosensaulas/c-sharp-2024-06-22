@@ -18,7 +18,7 @@ namespace ExemploWindowsForms
         private void buttonCategoria_Click(object sender, EventArgs e)
         {
             var form = new CategoriaForm();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void buttonProduto_Click(object sender, EventArgs e)

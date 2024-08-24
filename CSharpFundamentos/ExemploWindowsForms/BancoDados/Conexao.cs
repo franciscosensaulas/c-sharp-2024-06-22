@@ -4,7 +4,7 @@ namespace ExemploWindowsForms.BancoDados
 {
     internal class Conexao
     {
-        private readonly string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\moc\Desktop\aula17082024\CSharpFundamentos\ExemploWindowsForms\BancoDados\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
+        private readonly string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\francisco.sens\Desktop\BancoDados.mdf;Integrated Security=True;Connect Timeout=30";
 
         public SqlConnection Conectar()
         {
