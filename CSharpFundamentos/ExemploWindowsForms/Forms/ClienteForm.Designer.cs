@@ -48,12 +48,13 @@
             dataGridViewClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewClientes.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnNome, ColumnCpf, ColumnEndereco });
-            dataGridViewClientes.Location = new Point(12, 70);
+            dataGridViewClientes.Location = new Point(15, 88);
+            dataGridViewClientes.Margin = new Padding(4);
             dataGridViewClientes.Name = "dataGridViewClientes";
             dataGridViewClientes.ReadOnly = true;
             dataGridViewClientes.RowHeadersWidth = 51;
             dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewClientes.Size = new Size(776, 368);
+            dataGridViewClientes.Size = new Size(970, 460);
             dataGridViewClientes.TabIndex = 0;
             // 
             // ColumnId
@@ -91,27 +92,30 @@
             // labelPesquisa
             // 
             labelPesquisa.AutoSize = true;
-            labelPesquisa.Location = new Point(12, 16);
+            labelPesquisa.Location = new Point(15, 20);
+            labelPesquisa.Margin = new Padding(4, 0, 4, 0);
             labelPesquisa.Name = "labelPesquisa";
-            labelPesquisa.Size = new Size(65, 20);
+            labelPesquisa.Size = new Size(80, 25);
             labelPesquisa.TabIndex = 1;
             labelPesquisa.Text = "Pesquisa";
             // 
             // textBoxPesquisa
             // 
             textBoxPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxPesquisa.Location = new Point(83, 13);
+            textBoxPesquisa.Location = new Point(104, 16);
+            textBoxPesquisa.Margin = new Padding(4);
             textBoxPesquisa.Name = "textBoxPesquisa";
-            textBoxPesquisa.Size = new Size(348, 27);
+            textBoxPesquisa.Size = new Size(434, 31);
             textBoxPesquisa.TabIndex = 2;
             // 
             // buttonCadastrar
             // 
             buttonCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonCadastrar.Image = Properties.Resources.add_32;
-            buttonCadastrar.Location = new Point(733, 9);
+            buttonCadastrar.Location = new Point(916, 11);
+            buttonCadastrar.Margin = new Padding(4);
             buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(55, 55);
+            buttonCadastrar.Size = new Size(69, 69);
             buttonCadastrar.TabIndex = 3;
             buttonCadastrar.UseVisualStyleBackColor = true;
             buttonCadastrar.Click += buttonCadastrar_Click;
@@ -120,33 +124,38 @@
             // 
             buttonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonEditar.Image = Properties.Resources.pencil_32;
-            buttonEditar.Location = new Point(672, 9);
+            buttonEditar.Location = new Point(840, 11);
+            buttonEditar.Margin = new Padding(4);
             buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(55, 55);
+            buttonEditar.Size = new Size(69, 69);
             buttonEditar.TabIndex = 4;
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
             buttonApagar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonApagar.Image = Properties.Resources.recycle_bin_32;
-            buttonApagar.Location = new Point(611, 9);
+            buttonApagar.Location = new Point(764, 11);
+            buttonApagar.Margin = new Padding(4);
             buttonApagar.Name = "buttonApagar";
-            buttonApagar.Size = new Size(55, 55);
+            buttonApagar.Size = new Size(69, 69);
             buttonApagar.TabIndex = 5;
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // ClienteForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 450);
+            ClientSize = new Size(1006, 562);
             Controls.Add(buttonApagar);
             Controls.Add(buttonEditar);
             Controls.Add(buttonCadastrar);
             Controls.Add(textBoxPesquisa);
             Controls.Add(labelPesquisa);
             Controls.Add(dataGridViewClientes);
+            Margin = new Padding(4);
             Name = "ClienteForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema - Clientes";

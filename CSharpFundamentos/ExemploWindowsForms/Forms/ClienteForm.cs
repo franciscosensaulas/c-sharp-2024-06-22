@@ -31,6 +31,8 @@ namespace ExemploWindowsForms.Forms
         private void CarregarClientes()
         {
             var clientes = _clienteRepositorio.ObterTodos();
+            dataGridViewClientes.Rows.Clear();
+
             foreach (var cliente in clientes)
             {
                 dataGridViewClientes.Rows.Add(new object[]
@@ -47,5 +49,46 @@ namespace ExemploWindowsForms.Forms
         {
             CarregarClientes();
         }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewClientes.SelectedRows.Count < 0)
+            {
+                MessageBox.Show("Selecione um registro de cliente");
+                return;
+            }
+
+            var linhaSelecionada = dataGridViewClientes.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var form = new ClienteCadastroForm(id);
+            form.ShowDialog();
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewClientes.SelectedRows.Count < 0)
+            {
+                MessageBox.Show("Selecione um registro de cliente");
+                return;
+            }
+            var resultado = MessageBox.Show(
+                "Deseja realmente apagar o cliente?", "CUIDADO", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.No)
+                return;
+
+            var linhaSelecionada = dataGridViewClientes.SelectedRows[0];
+            var id = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+            _clienteRepositorio.Apagar(id);
+            MessageBox.Show("Cliente apagado com sucesso");
+            CarregarClientes();
+        }
+        /* Colaborador:
+            id
+            nome
+            cpf
+            valor hora
+            quantidade horas
+         */
     }
 }

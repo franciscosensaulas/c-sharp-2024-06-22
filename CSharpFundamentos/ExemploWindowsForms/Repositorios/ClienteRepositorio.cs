@@ -15,7 +15,7 @@ namespace ExemploWindowsForms.Repositorios
 
             // Definir o comando de insert que será executado na tabela de clientes
             comando.CommandText = """
-                INSERT INTO clientes (nome, cpf, email, uf, cidade, @logradouro, bairro, cep, numero, complemento, descricao) 
+                INSERT INTO clientes (nome, cpf, email, uf, cidade, logradouro, bairro, cep, numero, complemento, descricao) 
                 VALUES (@NOME, @CPF, @EMAIL, @UF, @CIDADE, @LOGRADOURO, @BAIRRO, @CEP, @NUMERO, @COMPLEMENTO, @DESCRICAO)
                 """;
             // Substituir o @NOME com o nome que o usuário digitou no campo
@@ -51,6 +51,7 @@ namespace ExemploWindowsForms.Repositorios
                         cpf = @CPF,
                         email = @EMAIL,
                         uf = @UF,
+                        logradouro = @LOGRADOURO,
                         cidade = @CIDADE,
                         bairro = @BAIRRO,
                         cep = @CEP,
