@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS produtos;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS clientes;
 
@@ -6,14 +7,16 @@ CREATE TABLE categorias (
 	nome VARCHAR(100) NOT NULL
 );
 
+
+
 INSERT INTO categorias (nome) VALUES 
-('Beleza'),
-('Self Care'),
-('Frutas'),
-('Verdeuras'),
-('Limpeza'),
-('Churrasco'),
-('Medicamentos');
+('Beleza'), -- 1
+('Self Care'), -- 2
+('Frutas'), -- 3
+('Verdeuras'), -- 4
+('Limpeza'), -- 5
+('Churrasco'), -- 6
+('Medicamentos'); -- 7
 
 CREATE TABLE clientes (
 	id INT PRIMARY KEY IDENTITY(1,1),
@@ -33,3 +36,36 @@ CREATE TABLE clientes (
 INSERT INTO clientes (nome, cpf, email, uf, cidade, logradouro, bairro, cep, numero, complemento, descricao) VALUES 
 ('Brenda Letícia Isabella Carvalho', '508.255.717-31', 'brendaleticiacarvalho@righettorosa.com.br', 'AM', 'Manaus', 'Avenida Carvalho Leal', 'São Francisco', '69079-030', '879', 'Casa Roxa', 'Cliente feliz com sistema');
 
+CREATE TABLE produtos(
+	id INT PRIMARY KEY IDENTITY(1,1),
+
+	categoria_id INT NOT NULL,
+
+	nome VARCHAR(100) NOT NULL,
+	preco_unitario DECIMAL(8,2) NOT NULL,
+	habilitado_venda BIT NOT NULL,
+	quantidade_estoque SMALLINT NOT NULL,
+
+	FOREIGN KEY(categoria_id) REFERENCES categorias(id)
+);
+
+INSERT INTO produtos (nome, categoria_id, preco_unitario, habilitado_venda, quantidade_estoque) VALUES 
+('Sabonete Gamer', 2, 15.00, 0, 2),
+('Shampoo Gamer com dobro de FPS', 2, 168.47, 1, 150),
+('Alcatra Casual', 6, 98.30, 1, 4),
+
+('Sucrelhos', 6, 26.80, 1, 15),
+('Pneu gamer', 1, 890.60, 0, 4),
+('Maça 2.0', 3, 6.78, 1, 150),
+
+('Cloro Enigmático', 5, 47.90, 1, 73),
+('Cupim Gorduroso', 6, 88.88, 1, 64),
+('Tomate Gamer', 3, 459.90, 0, 1);
+
+-- Consultar os produtos e sua categoria
+SELECT 
+	produtos.id AS 'id',
+	categorias.nome AS 'categoria',
+	produtos.nome AS 'nome'
+FROM produtos
+	INNER JOIN categorias ON (produtos.categoria_id = categorias.id);

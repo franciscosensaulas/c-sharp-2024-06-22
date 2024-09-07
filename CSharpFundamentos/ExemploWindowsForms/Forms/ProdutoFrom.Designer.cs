@@ -43,13 +43,9 @@
             textBoxNome = new TextBox();
             radioButtonHabilitadoVendaSim = new RadioButton();
             radioButtonHabilitadoVendaNao = new RadioButton();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
             labelCategoria = new Label();
             comboBoxCategoria = new ComboBox();
             buttonCadastrarCategoria = new Button();
-            label6 = new Label();
             labelHabilitadoVenda = new Label();
             labelPrecoUnitario = new Label();
             maskedTextBoxPrecoUnitario = new MaskedTextBox();
@@ -146,6 +142,7 @@
             textBoxFiltroNome.Name = "textBoxFiltroNome";
             textBoxFiltroNome.Size = new Size(606, 27);
             textBoxFiltroNome.TabIndex = 3;
+            textBoxFiltroNome.KeyDown += textBoxFiltroNome_KeyDown;
             // 
             // labelTotal
             // 
@@ -168,11 +165,12 @@
             // buttonSalvar
             // 
             buttonSalvar.Image = Properties.Resources.floppy_disk_32;
-            buttonSalvar.Location = new Point(1369, 296);
+            buttonSalvar.Location = new Point(1373, 600);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(48, 48);
             buttonSalvar.TabIndex = 6;
             buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // textBoxNome
             // 
@@ -184,7 +182,7 @@
             // radioButtonHabilitadoVendaSim
             // 
             radioButtonHabilitadoVendaSim.AutoSize = true;
-            radioButtonHabilitadoVendaSim.Location = new Point(1168, 213);
+            radioButtonHabilitadoVendaSim.Location = new Point(946, 222);
             radioButtonHabilitadoVendaSim.Name = "radioButtonHabilitadoVendaSim";
             radioButtonHabilitadoVendaSim.Size = new Size(55, 24);
             radioButtonHabilitadoVendaSim.TabIndex = 8;
@@ -195,43 +193,13 @@
             // radioButtonHabilitadoVendaNao
             // 
             radioButtonHabilitadoVendaNao.AutoSize = true;
-            radioButtonHabilitadoVendaNao.Location = new Point(1168, 242);
+            radioButtonHabilitadoVendaNao.Location = new Point(946, 251);
             radioButtonHabilitadoVendaNao.Name = "radioButtonHabilitadoVendaNao";
             radioButtonHabilitadoVendaNao.Size = new Size(58, 24);
             radioButtonHabilitadoVendaNao.TabIndex = 9;
             radioButtonHabilitadoVendaNao.TabStop = true;
             radioButtonHabilitadoVendaNao.Text = "Não";
             radioButtonHabilitadoVendaNao.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(946, 213);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 24);
-            checkBox1.TabIndex = 10;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(946, 243);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(101, 24);
-            checkBox2.TabIndex = 11;
-            checkBox2.Text = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(946, 273);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(101, 24);
-            checkBox3.TabIndex = 12;
-            checkBox3.Text = "checkBox3";
-            checkBox3.UseVisualStyleBackColor = true;
             // 
             // labelCategoria
             // 
@@ -244,11 +212,13 @@
             // 
             // comboBoxCategoria
             // 
+            comboBoxCategoria.DisplayMember = "Nome";
             comboBoxCategoria.FormattingEnabled = true;
             comboBoxCategoria.Location = new Point(946, 89);
             comboBoxCategoria.Name = "comboBoxCategoria";
             comboBoxCategoria.Size = new Size(430, 28);
             comboBoxCategoria.TabIndex = 14;
+            comboBoxCategoria.ValueMember = "Nome";
             // 
             // buttonCadastrarCategoria
             // 
@@ -260,19 +230,10 @@
             buttonCadastrarCategoria.UseVisualStyleBackColor = true;
             buttonCadastrarCategoria.Click += buttonCadastrarCategoria_Click;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(946, 190);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 20);
-            label6.TabIndex = 16;
-            label6.Text = "label6";
-            // 
             // labelHabilitadoVenda
             // 
             labelHabilitadoVenda.AutoSize = true;
-            labelHabilitadoVenda.Location = new Point(1168, 190);
+            labelHabilitadoVenda.Location = new Point(946, 199);
             labelHabilitadoVenda.Name = "labelHabilitadoVenda";
             labelHabilitadoVenda.Size = new Size(125, 20);
             labelHabilitadoVenda.TabIndex = 17;
@@ -297,11 +258,12 @@
             // buttonCancelar
             // 
             buttonCancelar.Image = Properties.Resources.close_32;
-            buttonCancelar.Location = new Point(1315, 296);
+            buttonCancelar.Location = new Point(1319, 600);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(48, 48);
             buttonCancelar.TabIndex = 20;
             buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // labelValorTotal
             // 
@@ -324,6 +286,7 @@
             // numericUpDownQuantidadeEstoque
             // 
             numericUpDownQuantidadeEstoque.Location = new Point(946, 155);
+            numericUpDownQuantidadeEstoque.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             numericUpDownQuantidadeEstoque.Name = "numericUpDownQuantidadeEstoque";
             numericUpDownQuantidadeEstoque.Size = new Size(200, 27);
             numericUpDownQuantidadeEstoque.TabIndex = 23;
@@ -331,20 +294,22 @@
             // buttonEditar
             // 
             buttonEditar.Image = Properties.Resources.pencil_32;
-            buttonEditar.Location = new Point(820, 112);
+            buttonEditar.Location = new Point(823, 112);
             buttonEditar.Name = "buttonEditar";
             buttonEditar.Size = new Size(48, 48);
             buttonEditar.TabIndex = 24;
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonApagar
             // 
             buttonApagar.Image = Properties.Resources.recycle_bin_32;
-            buttonApagar.Location = new Point(874, 112);
+            buttonApagar.Location = new Point(877, 112);
             buttonApagar.Name = "buttonApagar";
             buttonApagar.Size = new Size(48, 48);
             buttonApagar.TabIndex = 25;
             buttonApagar.UseVisualStyleBackColor = true;
+            buttonApagar.Click += buttonApagar_Click;
             // 
             // labelFiltroCategoria
             // 
@@ -357,11 +322,14 @@
             // 
             // comboBoxFiltroCategoria
             // 
+            comboBoxFiltroCategoria.DisplayMember = "Nome";
             comboBoxFiltroCategoria.FormattingEnabled = true;
             comboBoxFiltroCategoria.Location = new Point(3, 58);
             comboBoxFiltroCategoria.Name = "comboBoxFiltroCategoria";
             comboBoxFiltroCategoria.Size = new Size(236, 28);
             comboBoxFiltroCategoria.TabIndex = 27;
+            comboBoxFiltroCategoria.ValueMember = "Nome";
+            comboBoxFiltroCategoria.SelectedValueChanged += comboBoxFiltroCategoria_SelectedValueChanged;
             // 
             // panel1
             // 
@@ -384,6 +352,7 @@
             buttonPesquisar.Size = new Size(35, 35);
             buttonPesquisar.TabIndex = 28;
             buttonPesquisar.UseVisualStyleBackColor = true;
+            buttonPesquisar.Click += buttonPesquisar_Click;
             // 
             // ProdutoFrom
             // 
@@ -400,13 +369,9 @@
             Controls.Add(maskedTextBoxPrecoUnitario);
             Controls.Add(labelPrecoUnitario);
             Controls.Add(labelHabilitadoVenda);
-            Controls.Add(label6);
             Controls.Add(buttonCadastrarCategoria);
             Controls.Add(comboBoxCategoria);
             Controls.Add(labelCategoria);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
             Controls.Add(radioButtonHabilitadoVendaNao);
             Controls.Add(radioButtonHabilitadoVendaSim);
             Controls.Add(textBoxNome);
@@ -417,6 +382,7 @@
             Name = "ProdutoFrom";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema - Produtos";
+            Load += ProdutoFrom_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidadeEstoque).EndInit();
             panel1.ResumeLayout(false);
@@ -433,13 +399,9 @@
         private Button buttonEditar;
         private Button buttonPesquisar;
         private Button buttonSalvar;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
         private ComboBox comboBoxCategoria;
         private ComboBox comboBoxFiltroCategoria;
         private DataGridView dataGridViewProdutos;
-        private Label label6;
         private Label labelCategoria;
         private Label labelFiltroCategoria;
         private Label labelFiltroNome;
