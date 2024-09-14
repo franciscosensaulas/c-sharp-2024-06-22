@@ -1,5 +1,6 @@
 ﻿using ExemploWindowsForms.Entidades;
 using ExemploWindowsForms.Repositorios;
+using ExemploWindowsForms.Repositorios.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

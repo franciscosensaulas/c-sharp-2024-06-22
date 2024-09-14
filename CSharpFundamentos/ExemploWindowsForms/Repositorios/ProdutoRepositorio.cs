@@ -1,5 +1,6 @@
 ﻿using ExemploWindowsForms.BancoDados;
 using ExemploWindowsForms.Entidades;
+using ExemploWindowsForms.Repositorios.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +19,7 @@ namespace ExemploWindowsForms.Repositorios
             _conexao = new Conexao();
         }
 
-        public List<Produto> ObterTodos(string pesquisa, int? categoriaId)
+        public List<Produto> ObterTodos(string pesquisa, int? categoriaId = null)
         {
             var comando = _conexao.Conectar().CreateCommand();
             comando.CommandText = """

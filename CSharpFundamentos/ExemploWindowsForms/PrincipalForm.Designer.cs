@@ -32,6 +32,7 @@
             buttonCategoria = new Button();
             buttonProduto = new Button();
             buttonCliente = new Button();
+            buttonVendedores = new Button();
             SuspendLayout();
             // 
             // buttonCalculadora
@@ -92,11 +93,26 @@
             buttonCliente.UseVisualStyleBackColor = true;
             buttonCliente.Click += buttonCliente_Click;
             // 
+            // buttonVendedores
+            // 
+            buttonVendedores.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonVendedores.Image = Properties.Resources.dairy_products_64;
+            buttonVendedores.Location = new Point(264, 332);
+            buttonVendedores.Name = "buttonVendedores";
+            buttonVendedores.Padding = new Padding(0, 15, 0, 0);
+            buttonVendedores.Size = new Size(120, 120);
+            buttonVendedores.TabIndex = 4;
+            buttonVendedores.Text = "Vendedores";
+            buttonVendedores.TextImageRelation = TextImageRelation.ImageAboveText;
+            buttonVendedores.UseVisualStyleBackColor = true;
+            buttonVendedores.Click += buttonVendedores_Click;
+            // 
             // PrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(396, 594);
+            ClientSize = new Size(396, 590);
+            Controls.Add(buttonVendedores);
             Controls.Add(buttonCliente);
             Controls.Add(buttonProduto);
             Controls.Add(buttonCategoria);
@@ -114,5 +130,6 @@
         private Button buttonCategoria;
         private Button buttonProduto;
         private Button buttonCliente;
+        private Button buttonVendedores;
     }
 }

@@ -32,5 +32,11 @@ namespace ExemploWindowsForms
             var form = new ClienteForm();
             form.ShowDialog();
         }
+
+        private void buttonVendedores_Click(object sender, EventArgs e)
+        {
+            var form = new VendedoresForm();
+            form.ShowDialog();
+        }
     }
 }

@@ -1,3 +1,6 @@
+DROP TABLE IF EXISTS carrinho;
+DROP TABLE IF EXISTS vendas;
+DROP TABLE IF EXISTS vendedores;
 DROP TABLE IF EXISTS produtos;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS clientes;
@@ -13,7 +16,7 @@ INSERT INTO categorias (nome) VALUES
 ('Beleza'), -- 1
 ('Self Care'), -- 2
 ('Frutas'), -- 3
-('Verdeuras'), -- 4
+('Verduras'), -- 4
 ('Limpeza'), -- 5
 ('Churrasco'), -- 6
 ('Medicamentos'); -- 7
@@ -69,3 +72,39 @@ SELECT
 	produtos.nome AS 'nome'
 FROM produtos
 	INNER JOIN categorias ON (produtos.categoria_id = categorias.id);
+
+
+CREATE TABLE vendedores (
+	id INT PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR(100) NOT NULL,
+	usuario VARCHAR(40) NOT NULL,
+	senha VARCHAR(250) NOT NULL
+);
+
+INSERT INTO vendedores (nome, usuario, senha) VALUES 
+('Marcão', 'marquinhos', 'C7AD44CBAD762A5DA0A452F9E854FDC1E0E7A52A38015F23F3EAB1D80B931DD472634DFAC71CD34EBC35D16AB7FB8A90C81F975113D6C7538DC69DD8DE9077EC'),
+('Judity', 'judity', 'C7AD44CBAD762A5DA0A452F9E854FDC1E0E7A52A38015F23F3EAB1D80B931DD472634DFAC71CD34EBC35D16AB7FB8A90C81F975113D6C7538DC69DD8DE9077EC');
+
+CREATE TABLE vendas (
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	id_cliente INT NOT NULL,
+	id_vendedor INT NOT NULL,
+	data_hora_abertura DATETIME2 NOT NULL,
+	data_hora_fechamento DATETIME2,
+	[status] INT,
+	valor DECIMAL(10, 2),
+
+	FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+	FOREIGN KEY (id_vendedor) REFERENCES vendedores(id)
+);
+
+CREATE TABLE carrinho(
+	id INT PRIMARY KEY IDENTITY(1, 1),
+	id_vendedor INT NOT NULL,
+	id_venda INT NOT NULL,
+	quantidade INT,
+
+	FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
+	FOREIGN KEY (id_venda) REFERENCES vendas(id),
+);
+
