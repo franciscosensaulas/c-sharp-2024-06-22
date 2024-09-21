@@ -69,6 +69,7 @@
             comboBoxProdutos.Size = new Size(378, 28);
             comboBoxProdutos.TabIndex = 0;
             comboBoxProdutos.ValueMember = "Nome";
+            comboBoxProdutos.SelectedIndexChanged += comboBoxProdutos_SelectedIndexChanged;
             // 
             // labelProduto
             // 
@@ -117,6 +118,7 @@
             numericUpDownQuantidade.Name = "numericUpDownQuantidade";
             numericUpDownQuantidade.Size = new Size(378, 27);
             numericUpDownQuantidade.TabIndex = 5;
+            numericUpDownQuantidade.ValueChanged += numericUpDownQuantidade_ValueChanged;
             // 
             // labelCliente
             // 
@@ -167,6 +169,7 @@
             buttonAdicionar.TabIndex = 10;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
+            buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // labelStatus
             // 
@@ -239,6 +242,7 @@
             dataGridViewCarrinho.Name = "dataGridViewCarrinho";
             dataGridViewCarrinho.ReadOnly = true;
             dataGridViewCarrinho.RowHeadersWidth = 51;
+            dataGridViewCarrinho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewCarrinho.Size = new Size(715, 613);
             dataGridViewCarrinho.TabIndex = 19;
             // 
@@ -285,6 +289,7 @@
             // labelTexto
             // 
             labelTexto.AutoSize = true;
+            labelTexto.Enabled = false;
             labelTexto.Location = new Point(1395, 660);
             labelTexto.Name = "labelTexto";
             labelTexto.Size = new Size(42, 20);
@@ -294,6 +299,7 @@
             // labelTotalTexto
             // 
             labelTotalTexto.AutoSize = true;
+            labelTotalTexto.Enabled = false;
             labelTotalTexto.Location = new Point(1465, 660);
             labelTotalTexto.Name = "labelTotalTexto";
             labelTotalTexto.Size = new Size(57, 20);
@@ -309,6 +315,7 @@
             buttonFecharPedido.TabIndex = 22;
             buttonFecharPedido.Text = "Fechar Pedido";
             buttonFecharPedido.UseVisualStyleBackColor = true;
+            buttonFecharPedido.Click += buttonFecharPedido_Click;
             // 
             // buttonCancelarPedido
             // 
@@ -319,6 +326,7 @@
             buttonCancelarPedido.TabIndex = 23;
             buttonCancelarPedido.Text = "Cancelar Pedido";
             buttonCancelarPedido.UseVisualStyleBackColor = true;
+            buttonCancelarPedido.Click += buttonCancelarPedido_Click;
             // 
             // VendaForm
             // 

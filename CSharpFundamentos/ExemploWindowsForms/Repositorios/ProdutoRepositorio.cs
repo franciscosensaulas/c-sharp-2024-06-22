@@ -34,6 +34,7 @@ namespace ExemploWindowsForms.Repositorios
                     FROM produtos
                     INNER JOIN categorias ON (produtos.categoria_id = categorias.id)
                     WHERE produtos.nome LIKE @NOME
+                    ORDER BY nome ASC
                 """;
             comando.Parameters.AddWithValue("@NOME", $"%{pesquisa}%");
 
@@ -168,6 +169,21 @@ namespace ExemploWindowsForms.Repositorios
             produto.Categoria = categoria;
 
             return produto;
+        }
+
+        public void AtualizarEstoque(int id, int estoqueAtual)
+        {
+            var comando = _conexao.Conectar().CreateCommand();
+            comando.CommandText = """
+                UPDATE produtos 
+                SET quantidade_estoque = @QUANTIDADE_ESTOQUE 
+                WHERE id = @ID
+                """;
+
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@QUANTIDADE_ESTOQUE", estoqueAtual);
+            comando.ExecuteNonQuery();
+            comando.Connection.Close();
         }
     }
 }

@@ -10,5 +10,6 @@ namespace ExemploWindowsForms.Repositorios.Interfaces
         void Apagar(int id);
         bool Existe(int id);
         void Editar(Produto produto);
+        void AtualizarEstoque(int id, int estoqueAtual);
     }
 }

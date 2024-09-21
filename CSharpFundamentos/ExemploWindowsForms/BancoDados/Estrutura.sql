@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS carrinho;
+DROP TABLE IF EXISTS vendas_produtos;
 DROP TABLE IF EXISTS vendas;
 DROP TABLE IF EXISTS vendedores;
 DROP TABLE IF EXISTS produtos;
@@ -91,20 +91,32 @@ CREATE TABLE vendas (
 	id_vendedor INT NOT NULL,
 	data_hora_abertura DATETIME2 NOT NULL,
 	data_hora_fechamento DATETIME2,
-	[status] INT,
+	[status] INT NOT NULL,
+	motivo_cancelamento VARCHAR(200),
 	valor DECIMAL(10, 2),
 
 	FOREIGN KEY (id_cliente) REFERENCES clientes(id),
 	FOREIGN KEY (id_vendedor) REFERENCES vendedores(id)
 );
 
-CREATE TABLE carrinho(
+CREATE TABLE vendas_produtos(
 	id INT PRIMARY KEY IDENTITY(1, 1),
-	id_vendedor INT NOT NULL,
+	id_produto INT NOT NULL,
 	id_venda INT NOT NULL,
 	quantidade INT,
 
-	FOREIGN KEY (id_vendedor) REFERENCES vendedores(id),
+	FOREIGN KEY (id_produto) REFERENCES produtos(id),
 	FOREIGN KEY (id_venda) REFERENCES vendas(id),
 );
 
+
+ SELECT 
+                    vp.id,
+                    vp.quantidade,
+                    vp.id_produto,
+                    p.nome,
+                    p.preco_unitario
+                    FROM vendas_produtos AS vp
+                    INNER JOIN produtos AS p ON (vp.id_produto = p.id);
+
+SELECT * FROM produtos;

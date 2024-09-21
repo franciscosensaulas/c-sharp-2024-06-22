@@ -58,5 +58,11 @@ namespace ExemploWindowsForms.Forms
             if (e.KeyCode == Keys.Enter)
                 buttonEntrar.PerformClick();
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            textBoxUsuario.Text = "marquinhos";
+            textBoxSenha.Text = "admin";
+        }
     }
 }
