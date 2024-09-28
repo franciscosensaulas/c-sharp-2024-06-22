@@ -1,0 +1,43 @@
+﻿<h1>Lista de Carros</h1>
+
+<ul>
+    @foreach (var carro in ViewBag.Carros)
+    {
+        <li>
+            Código: @carro.Id <br />
+            Marca: @carro.Marca <br />
+            Modelo: @carro.Modelo <br />
+            <a href="">Editar</a>
+            <a href="/carro/apagar?id=@carro.Id">Apagar</a>
+        </li>
+    }
+</ul>
+
+<form method="get" action="/carro/cadastrar">
+
+    <div>
+        <label for="campo-marca">Marca</label>
+        <select id="campo-marca" name="marca">
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Ford">Ford</option>
+            <option value="Volkswagen">Volkswagen</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="campo-modelo">Modelo</label>
+        <input type="text" id="campo-modelo" name="modelo">
+    </div>
+
+    <div>
+        <label for="campo-ano">Ano</label>
+        <input type="number" id="campo-ano" name="ano">
+    </div>
+
+    <div>
+        <label for="campo-descricao">Descrição</label>
+        <textarea id="campo-descricao" name="descricao"></textarea>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>

@@ -1,0 +1,34 @@
+﻿<h1>O resultado da soma é: @ViewBag.ResultadoSoma</h1>
+<!-- 
+    ViewBag: é o lugar que será utilizado quando
+        precisamos de algum dado no html que vem do c#
+
+    Neste cenário estamos utilizando ResultadoSoma que é uma variável 
+        que foi atribuída na action Somar do CalculadoraController
+-->
+
+
+<!-- Link para voltar para a calculadora -->
+<a href="/calculadora">Voltar para Calculadora</a>
+
+
+<!--
+    Ex. 01: Criar um sistema que permita o usuário preencher 3 notas e apresentar a média e sua situação
+        - Criar um controller chamado AlunoController dentro de Controllers
+        - Criar a pasta Aluno dentro de Views
+        - Criar a Exibição chamada de Index.cshtml dentro Views/Aluno
+        - Abrir o arquivo Views/Aluno/Index.cshtml
+            - Adicionar o formulário com action "aluno/calcularMedia"
+            - Adicionar campo de nome do tipo text
+            - Adicionar campo nota1, nota2 e nota3 do tipo number
+            - Adicionar botão calcular
+        - Criar action no AlunoController com route "aluno/calcularMedia"
+        - Recebendo como parâmetro (dentro dos parenteses) nome, nota1, nota2 e nota3
+    Ex. 02: Criar um sistema que permita o usuário calcular seu IMC com os seguintes itens:
+        - nome
+        - altura
+        - peso
+            
+
+
+-->

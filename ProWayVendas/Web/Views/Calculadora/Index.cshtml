@@ -1,0 +1,22 @@
+﻿<h1>Bem vindo a Calculadora</h1>
+
+<!--
+    Form é uma tag que nos permite enviar dados de campos para o servidor
+        method: é a forma que estes dados serão enviados, get (vai na URL), post (vai por debaixo dos panos)
+        action: é a rota que estes dados serão enviados, ou seja, para algum controller
+    https://localhost:7235/calculadora/somar?numero1=19&numero2=10
+-->
+
+<form method="get" action="/calculadora/somar">
+    <div>
+        <label for="campo-numero1">Número 01</label>
+        <input type="number" id="campo-numero1" name="numero1"/>
+    </div>
+
+    <div>
+        <label for="campo-numero2">Número 02</label>
+        <input type="number" id="campo-numero2" name="numero2"/>
+    </div>
+
+    <button>Calcular</button>
+</form>
