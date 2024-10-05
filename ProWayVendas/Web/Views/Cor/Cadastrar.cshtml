@@ -1,0 +1,18 @@
+﻿@model CorCadastrarViewModel
+
+<form method="post" action="/cor/cadastrar">
+
+    <div class="field">
+        <label asp-for="Nome" class="label"></label>
+        <div class="control">
+            <input asp-for="Nome" class="input" />
+        </div>
+    </div>
+
+    <button class="button is-primary is-pulled-right">
+        <span class="icon is-small">
+            <i class="fas fa-save"></i>
+        </span>
+        <span>Salvar</span>
+    </button>
+</form>

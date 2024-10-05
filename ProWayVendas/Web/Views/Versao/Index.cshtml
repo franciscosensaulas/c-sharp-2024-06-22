@@ -1,0 +1,50 @@
+﻿@model List<VersaoViewModel>
+
+<h1 class="title has-text-centered">Versões</h1>
+
+<a href="/versao/cadastrar" class="button is-primary mb-3 is-small is-pulled-right">
+    <span class="icon is-small">
+        <i class="fas fa-plus"></i>
+    </span>
+    <span>Cadastrar</span>
+</a>
+
+<table class="table is-striped is-bordered is-fullwidth is-hoverable is-primary">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Nome</th>
+            <th>Cilindrada</th>
+            <th>Motor</th>
+            <th>Tipo</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Fiat</td>
+            <td>Uno</td>
+            <td>Com Escada</td>
+            <td>1.6</td>
+            <td>Aspirado</td>
+            <td>Hatch</td>
+            <td>
+                <a href="#" class="button is-primary is-small">
+                    <span class="icon is-small">
+                        <i class="fas fa-pencil"></i>
+                    </span>
+                    <span>Editar</span>
+                </a>
+                <a href="#" class="button is-danger is-outlined is-small">
+                    <span class="icon is-small">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span>Apagar</span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

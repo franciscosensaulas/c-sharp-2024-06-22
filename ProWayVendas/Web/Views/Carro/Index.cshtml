@@ -1,17 +1,29 @@
-﻿<h1>Lista de Carros</h1>
+﻿<h1 class="title has-text-centered">Lista de Carros</h1>
 
-<ul>
-    @foreach (var carro in ViewBag.Carros)
-    {
-        <li>
-            Código: @carro.Id <br />
-            Marca: @carro.Marca <br />
-            Modelo: @carro.Modelo <br />
-            <a href="">Editar</a>
-            <a href="/carro/apagar?id=@carro.Id">Apagar</a>
-        </li>
-    }
-</ul>
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var carro in ViewBag.Carros)
+        {
+            <tr>
+                <td>@carro.Id </td>
+                <td> @carro.Marca </td>
+                <td>@carro.Modelo</td>
+                <td>
+                    <a href="/carro/editar?id=@carro.Id" class="button is-primary">Editar</a>
+                    <a href="/carro/apagar?id=@carro.Id" class="button is-danger is-outlined">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 <form method="get" action="/carro/cadastrar">
 

@@ -1,0 +1,25 @@
+﻿@model MarcaCadastrarViewModel
+
+<form method="post" action="/marca/cadastrar">
+
+    <div class="field">
+        <label asp-for="Nome" class="label"></label>
+        <div class="control">
+            <input asp-for="Nome" class="input" />
+        </div>
+    </div>
+
+    <div class="field">
+        <label asp-for="Cnpj" class="label"></label>
+        <div class="control">
+            <input asp-for="Cnpj" class="input" />
+        </div>
+    </div>
+
+    <button class="button is-primary is-pulled-right">
+        <span class="icon is-small">
+            <i class="fas fa-save"></i>
+        </span>
+        <span>Salvar</span>
+    </button>
+</form>

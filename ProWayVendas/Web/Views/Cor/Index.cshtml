@@ -1,0 +1,40 @@
+﻿@model List<CorViewModel>
+
+<h1 class="title has-text-centered">Cores</h1>
+
+<a href="/cor/cadastrar" class="button is-primary mb-3 is-small is-pulled-right">
+    <span class="icon is-small">
+        <i class="fas fa-plus"></i>
+    </span>
+    <span>Cadastrar</span>
+</a>
+
+<table class="table is-striped is-bordered is-fullwidth is-hoverable is-primary">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Azul</td>
+            <td>
+                <a href="#" class="button is-primary is-small">
+                    <span class="icon is-small">
+                        <i class="fas fa-pencil"></i>
+                    </span>
+                    <span>Editar</span>
+                </a>
+                <a href="#" class="button is-danger is-outlined is-small">
+                    <span class="icon is-small">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                    <span>Apagar</span>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

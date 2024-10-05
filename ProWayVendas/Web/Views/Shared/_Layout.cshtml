@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+
+    <nav class="navbar is-white" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="/veiculo">
+                    Veículos
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/cor">
+                            Cores
+                        </a>
+                        <a class="navbar-item" href="/marca">
+                            Marcas
+                        </a>
+                        <a class="navbar-item" href="/modelo">
+                            Modelos
+                        </a>
+                        <a class="navbar-item" href="/opcional">
+                            Opcionais
+                        </a>
+                        <a class="navbar-item" href="/versao">
+                            Versões
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/96a844a27d.js" crossorigin="anonymous"></script>
+</body>
+</html>

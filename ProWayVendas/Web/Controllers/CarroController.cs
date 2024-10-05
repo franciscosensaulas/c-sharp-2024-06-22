@@ -6,6 +6,14 @@ namespace Web.Controllers
 {
     public class CarroController : Controller
     {
+        List<string> Marcas = new List<string>
+        {
+            "Chevrolet",
+            "Fiat",
+            "Ford",
+            "Volkswagen",
+        };
+
         static int ProximoCodigo = 0;
         static List<Carro> Carros = new List<Carro>
         {
@@ -16,7 +24,23 @@ namespace Web.Controllers
                 Modelo = "Astra",
                 Ano = 2008,
                 Descricao = "Modelo v8"
-            }
+            },
+            new Carro
+            {
+                Id = ++ProximoCodigo,
+                Marca = "Fiat",
+                Modelo = "Uno",
+                Ano = 1996,
+                Descricao = "Com escada"
+            },
+            new Carro
+            {
+                Id = ++ProximoCodigo,
+                Marca = "Ford",
+                Modelo = "Belina",
+                Ano = 1980,
+                Descricao = "Branca com Bege"
+            },
         };
         public IActionResult Index()
         {
@@ -62,6 +86,43 @@ namespace Web.Controllers
 
             // Redirecionamento para a lista a action que lista os carros
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        [Route("/carro/editar")]
+        public IActionResult Editar(int id)
+        {
+            foreach(Carro carro in Carros)
+            {
+                if (carro.Id == id)
+                {
+                    ViewBag.Marcas = Marcas;
+                    ViewBag.Carro = carro;
+                    return View();
+                }
+            }
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        [Route("/carro/editar")]
+        public IActionResult Editar(
+            int id, string marca, string modelo, int ano, string? descricao)
+        {
+            foreach (Carro carro in Carros)
+            {
+                if (carro.Id == id)
+                {
+                    carro.Marca = marca;
+                    carro.Modelo = modelo;
+                    carro.Ano = ano;
+                    carro.Descricao = descricao;
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return NotFound();
         }
     }
 }

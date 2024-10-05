@@ -1,0 +1,34 @@
+﻿<form method="post" action="/carro/editar?id=@ViewBag.Carro.Id">
+
+    <div>
+        <label for="campo-marca">Marca</label>
+        <select id="campo-marca" name="marca">
+            @foreach(string marca in ViewBag.Marcas)
+            {
+                if (marca == ViewBag.Carro.Marca){
+                    <option value="@marca" selected>@marca</option>
+                }
+                else
+                {
+                    <option value="@marca">@marca</option>
+                }
+            }   
+        </select>
+    </div>
+
+    <div>
+        <label for="campo-modelo">Modelo</label>
+        <input type="text" id="campo-modelo" name="modelo" value="@ViewBag.Carro.Modelo">
+    </div>
+
+    <div>
+        <label for="campo-ano">Ano</label>
+        <input type="number" id="campo-ano" name="ano" value="@ViewBag.Carro.Ano">
+    </div>
+
+    <div>
+        <label for="campo-descricao">Descrição</label>
+        <textarea id="campo-descricao" name="descricao">@ViewBag.Carro.Descricao</textarea>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
