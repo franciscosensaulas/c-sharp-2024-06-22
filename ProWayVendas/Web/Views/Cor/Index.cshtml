@@ -18,23 +18,26 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Azul</td>
-            <td>
-                <a href="#" class="button is-primary is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-pencil"></i>
-                    </span>
-                    <span>Editar</span>
-                </a>
-                <a href="#" class="button is-danger is-outlined is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-trash"></i>
-                    </span>
-                    <span>Apagar</span>
-                </a>
-            </td>
-        </tr>
+        @foreach (var corViewModel in Model)
+        {
+            <tr>
+                <td>@corViewModel.Id</td>
+                <td>@corViewModel.Nome</td>
+                <td>
+                    <a href="/cor/editar?id=@corViewModel.Id" class="button is-primary is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-pencil"></i>
+                        </span>
+                        <span>Editar</span>
+                    </a>
+                    <a href="/cor/apagar?id=@corViewModel.Id" class="button is-danger is-outlined is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                        <span>Apagar</span>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

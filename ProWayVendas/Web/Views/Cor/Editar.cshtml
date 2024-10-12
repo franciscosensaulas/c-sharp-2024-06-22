@@ -1,0 +1,18 @@
+﻿@model CorEditarViewModel
+
+<form method="post" action="/cor/editar?id=@Model.Id">
+
+    <div class="field">
+        <label asp-for="Nome" class="label"></label>
+        <div class="control">
+            <input asp-for="Nome" class="input" />
+        </div>
+    </div>
+
+    <button class="button is-primary is-pulled-right" type="submit">
+        <span class="icon is-small">
+            <i class="fas fa-save"></i>
+        </span>
+        <span>Salvar</span>
+    </button>
+</form>

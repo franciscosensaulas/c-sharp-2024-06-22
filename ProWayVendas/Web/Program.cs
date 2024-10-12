@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Web.BancoDados;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Adicionar o VendasContexto que é classe que tem a herança de DbContext,
+// que permitirá manipular o nosso banco de dados
+builder.Services.AddDbContext<VendasContexto>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("SqlServer")));
 
 var app = builder.Build();
 
