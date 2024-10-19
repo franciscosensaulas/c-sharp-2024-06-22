@@ -9,6 +9,42 @@
     <span>Cadastrar</span>
 </a>
 
+<form asp-action="Index" method="GET" class="mb-3">
+    <div class="columns">
+        <div class="column is-one-third">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Nome</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input name="nome" id="nome" class="input" value="@ViewBag.PesquisaNome" autofocus/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-third">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">CNPJ</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input name="cnpj" id="cnpj" class="input" value="@ViewBag.PesquisaCnpj" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <button class="button is-primary">Pesquisar</button>
+        </div>
+    </div>
+</form>
+
 <table class="table is-striped is-bordered is-fullwidth is-hoverable is-primary">
     <thead>
         <tr>
@@ -19,24 +55,27 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Fiat</td>
-            <td>31.154.016/0001-82</td>
-            <td>
-                <a href="#" class="button is-primary is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-pencil"></i>
-                    </span>
-                    <span>Editar</span>
-                </a>
-                <a href="#" class="button is-danger is-outlined is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-trash"></i>
-                    </span>
-                    <span>Apagar</span>
-                </a>
-            </td>
-        </tr>
+        @foreach (var marca in Model)
+        {
+            <tr>
+                <td>@marca.Id</td>
+                <td>@marca.Nome</td>
+                <td>@marca.Cnpj</td>
+                <td>
+                    <a href="/marca/editar?id=@marca.Id" class="button is-primary is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-pencil"></i>
+                        </span>
+                        <span>Editar</span>
+                    </a>
+                    <a href="/marca/apagar?id=@marca.Id" class="button is-danger is-outlined is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                        <span>Apagar</span>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

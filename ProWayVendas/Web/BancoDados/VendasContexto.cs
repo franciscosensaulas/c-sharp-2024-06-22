@@ -7,6 +7,7 @@ namespace Web.BancoDados
     public class VendasContexto : DbContext
     {
         public DbSet<Cor> Cores { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
 
         // Instalar o CLI do dotnet ef
         // dotnet tool install --global dotnet-ef
@@ -31,6 +32,7 @@ namespace Web.BancoDados
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new CorMapeamento());
+            modelBuilder.ApplyConfiguration(new MarcaMapeamento());
         }
     }
 }

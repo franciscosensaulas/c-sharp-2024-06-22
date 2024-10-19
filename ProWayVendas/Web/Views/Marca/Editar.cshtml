@@ -1,0 +1,34 @@
+﻿@model MarcaEditarViewModel
+
+<form method="post" action="/marca/editar?id=@Model.Id">
+
+    <div class="field">
+        <label asp-for="Nome" class="label"></label>
+        <div class="control">
+            <input asp-for="Nome" class="input" />
+            <span class="has-text-danger" asp-validation-for="Nome"></span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label asp-for="Cnpj" class="label"></label>
+        <div class="control">
+            <input asp-for="Cnpj" class="input" />
+            <span class="has-text-danger" asp-validation-for="Cnpj"></span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label asp-for="Descricao" class="label"></label>
+        <div class="control">
+            <textarea asp-for="Descricao" class="input"></textarea>
+        </div>
+    </div>
+
+    <button class="button is-primary is-pulled-right">
+        <span class="icon is-small">
+            <i class="fas fa-save"></i>
+        </span>
+        <span>Salvar</span>
+    </button>
+</form>

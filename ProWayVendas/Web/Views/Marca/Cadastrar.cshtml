@@ -6,6 +6,7 @@
         <label asp-for="Nome" class="label"></label>
         <div class="control">
             <input asp-for="Nome" class="input" />
+            <span class="has-text-danger" asp-validation-for="Nome"></span>
         </div>
     </div>
 
@@ -13,6 +14,14 @@
         <label asp-for="Cnpj" class="label"></label>
         <div class="control">
             <input asp-for="Cnpj" class="input" />
+            <span class="has-text-danger" asp-validation-for="Cnpj"></span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label asp-for="Descricao" class="label"></label>
+        <div class="control">
+            <textarea asp-for="Descricao" class="input"></textarea>
         </div>
     </div>
 
