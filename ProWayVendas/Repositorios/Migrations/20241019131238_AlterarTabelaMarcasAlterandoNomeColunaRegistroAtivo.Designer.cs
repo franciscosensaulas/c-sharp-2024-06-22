@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web.BancoDados;
+using Repositorios.BancoDados;
 
 #nullable disable
 
-namespace Web.Migrations
+namespace Repositorios.Migrations
 {
     [DbContext(typeof(VendasContexto))]
     [Migration("20241019131238_AlterarTabelaMarcasAlterandoNomeColunaRegistroAtivo")]
@@ -24,7 +24,7 @@ namespace Web.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Web.Entidades.Cor", b =>
+            modelBuilder.Entity("Repositorios.Entidades.Cor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace Web.Migrations
                     b.ToTable("cores", (string)null);
                 });
 
-            modelBuilder.Entity("Web.Entidades.Marca", b =>
+            modelBuilder.Entity("Repositorios.Entidades.Marca", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

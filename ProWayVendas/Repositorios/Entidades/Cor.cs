@@ -1,4 +1,4 @@
-﻿namespace Web.Entidades
+﻿namespace Repositorios.Entidades
 {
     // Representação da tabela de cores
     public class Cor

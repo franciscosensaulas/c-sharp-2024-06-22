@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Web.BancoDados;
+using Repositorios.BancoDados;
 
 #nullable disable
 
-namespace Web.Migrations
+namespace Repositorios.Migrations
 {
     [DbContext(typeof(VendasContexto))]
-    [Migration("20241019114534_CriarTabelaMarcas")]
-    partial class CriarTabelaMarcas
+    [Migration("20241012125723_CriarTabelaCores")]
+    partial class CriarTabelaCores
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace Web.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Web.Entidades.Cor", b =>
+            modelBuilder.Entity("Repositorios.Entidades.Cor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,38 +40,6 @@ namespace Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("cores", (string)null);
-                });
-
-            modelBuilder.Entity("Web.Entidades.Marca", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Cnpj")
-                        .IsRequired()
-                        .HasMaxLength(18)
-                        .HasColumnType("CHAR");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR");
-
-                    b.Property<bool>("RegistroAtivo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true)
-                        .HasColumnName("BIT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("marcas", (string)null);
                 });
 #pragma warning restore 612, 618
         }

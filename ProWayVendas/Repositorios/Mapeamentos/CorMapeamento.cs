@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Web.Entidades;
+using Repositorios.Entidades;
 
-namespace Web.Mapeamentos
+namespace Repositorios.Mapeamentos
 {
     public class CorMapeamento : IEntityTypeConfiguration<Cor>
     {

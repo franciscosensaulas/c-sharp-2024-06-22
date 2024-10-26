@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositorios.Contexto
+namespace Servicos.Dtos.Cor
 {
-    internal class VendasContexto
+    public class CorDto
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
     }
 }

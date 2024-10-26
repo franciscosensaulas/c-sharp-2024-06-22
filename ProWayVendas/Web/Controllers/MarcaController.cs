@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using System.Reflection;
-using Web.BancoDados;
-using Web.Entidades;
-using Web.Migrations;
+using Repositorios.Entidades;
+using Repositorios.Interfaces;
+using Servicos.Dtos.Marca;
+using Servicos.Interfaces;
 using Web.ViewModels;
 using Web.ViewModels.Forms;
 
@@ -12,47 +11,33 @@ namespace Web.Controllers
     [Route("/marca")]
     public class MarcaController : Controller
     {
-        private readonly VendasContexto _contexto;
+        private readonly IMarcaServico _servico;
 
-        public MarcaController(VendasContexto contexto)
+        public MarcaController(IMarcaServico servico)
         {
-            _contexto = contexto;
+            _servico = servico;
         }
 
         [HttpGet]
         public IActionResult Index([FromQuery] string? nome, [FromQuery] string? cnpj)
         {
-            var query = _contexto.Marcas.Where(x => x.RegistroAtivo == true).AsQueryable();
-
-            if(!string.IsNullOrEmpty(nome))
-            {
-                query = query.Where(x => x.Nome.ToLower().Contains(nome.ToLower()));
-            }
-
-            if (!string.IsNullOrEmpty(cnpj))
-            {
-                query = query.Where(x => x.Cnpj.Contains(cnpj));
-            }
-
-            query = query.OrderBy(x => x.Nome);
-
-            var marcas = query.ToList();
+            var dtos = _servico.ObterTodos(nome, cnpj);
 
             var viewModels = new List<MarcaViewModel>();
 
-            foreach (var marca in marcas)
+            foreach (var dto in dtos)
             {
                 var viewModel = new MarcaViewModel
                 {
-                    Id = marca.Id,
-                    Nome = marca.Nome,
-                    Cnpj = marca.Cnpj,
+                    Id = dto.Id,
+                    Nome = dto.Nome,
+                    Cnpj = dto.Cnpj,
                 };
                 viewModels.Add(viewModel);
             }
 
-            ViewBag.PesquisaNome = nome ?? "";
-            ViewBag.PesquisaCnpj = cnpj ?? "";
+            ViewBag.PesquisaNome = nome ?? string.Empty;
+            ViewBag.PesquisaCnpj = cnpj ?? string.Empty;
 
             return View(viewModels);
         }
@@ -68,19 +53,18 @@ namespace Web.Controllers
         [HttpPost("cadastrar")]
         public IActionResult Cadastrar(MarcaCadastrarViewModel viewModel)
         {
-            if(ModelState.IsValid == false)
+            if (ModelState.IsValid == false)
             {
                 return View(viewModel);
             }
 
-            var marca = new Marca
+            var dto = new MarcaCadastrarDto
             {
-                Nome = viewModel.Nome,
-                Cnpj = viewModel.Cnpj,
+                Nome = viewModel.Nome!,
+                Cnpj = viewModel.Cnpj!,
                 Descricao = viewModel.Descricao
             };
-            _contexto.Marcas.Add(marca);
-            _contexto.SaveChanges();
+            _servico.Cadastrar(dto);
 
             return RedirectToAction("Index");
         }
@@ -88,54 +72,69 @@ namespace Web.Controllers
         [HttpGet("apagar")]
         public IActionResult Apagar(int id)
         {
-            var marca = _contexto.Marcas.Find(id);
+            try
+            {
+                _servico.Apagar(id);
 
-            if (marca is null)
+                return RedirectToAction("Index");
+            }
+            catch
+            {
                 return NotFound();
-
-            marca.RegistroAtivo = false;
-            _contexto.SaveChanges();
-            return RedirectToAction("Index");
+            }
         }
 
         [HttpGet("editar")]
         public IActionResult Editar(int id)
         {
-            var marca = _contexto.Marcas.Find(id);
-
-            if (marca is null)
-                return NotFound();
-
-            var viewModel = new MarcaEditarViewModel
+            try
             {
-                Id = marca.Id,
-                Nome = marca.Nome,
-                Cnpj = marca.Cnpj,
-                Descricao = marca.Descricao
-            };
 
-            return View(viewModel);
+                var marca = _servico.ObterPorId(id);
+
+                var viewModel = new MarcaEditarViewModel
+                {
+                    Id = marca.Id,
+                    Nome = marca.Nome,
+                    Cnpj = marca.Cnpj,
+                    Descricao = marca.Descricao
+                };
+
+                return View(viewModel);
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost("editar")]
-        public IActionResult Editar([FromForm]MarcaEditarViewModel viewModel, [FromQuery] int id)
+        public IActionResult Editar([FromForm] MarcaEditarViewModel viewModel, [FromQuery] int id)
         {
-            var marca = _contexto.Marcas.Find(id);
-            if (marca is null)
-                return NotFound();
-
-            if (ModelState.IsValid == false)
+            try
             {
-                viewModel.Id = id;
-                return View(viewModel);
+                if (!ModelState.IsValid)
+                {
+                    viewModel.Id = id;
+                    return View(viewModel);
+                }
+
+                var dto = new MarcaEditarDto
+                {
+                    Id = id,
+                    Nome = viewModel.Nome!,
+                    Descricao = viewModel.Descricao,
+                    Cnpj = viewModel.Cnpj!
+                };
+
+                _servico.Editar(dto);
+
+                return RedirectToAction("Index");
             }
-
-            marca.Nome = viewModel.Nome;
-            marca.Descricao = viewModel.Descricao;
-            marca.Cnpj = viewModel.Cnpj;
-            _contexto.SaveChanges();
-
-            return RedirectToAction("Index");
+            catch
+            {
+                return NotFound();
+            }
         }
     }
 }

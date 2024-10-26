@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Web.Entidades;
+using Repositorios.Entidades;
 
-namespace Web.Mapeamentos
+namespace Repositorios.Mapeamentos
 {
     public class MarcaMapeamento : IEntityTypeConfiguration<Marca>
     {
@@ -16,7 +16,7 @@ namespace Web.Mapeamentos
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(50)
                 .IsRequired();
-            
+
             builder.Property(x => x.Cnpj)
                 .HasColumnType("CHAR")
                 .HasMaxLength(18)

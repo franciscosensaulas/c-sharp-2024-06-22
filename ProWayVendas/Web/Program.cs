@@ -1,10 +1,21 @@
 using Microsoft.EntityFrameworkCore;
-using Web.BancoDados;
+using Repositorios.BancoDados;
+using Repositorios.Interfaces;
+using Repositorios.Repositorios;
+using Servicos.Interfaces;
+using Servicos.Servicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+
+// Dependecy Injection
+builder.Services.AddScoped<ICorServico, CorServico>();
+builder.Services.AddScoped<ICorRepositorio, CorRepositorio>();
+builder.Services.AddScoped<IMarcaRepositorio, MarcaRepositorio>();
+builder.Services.AddScoped<IMarcaServico, MarcaServico>();
 
 // Adicionar o VendasContexto que é classe que tem a herança de DbContext,
 // que permitirá manipular o nosso banco de dados

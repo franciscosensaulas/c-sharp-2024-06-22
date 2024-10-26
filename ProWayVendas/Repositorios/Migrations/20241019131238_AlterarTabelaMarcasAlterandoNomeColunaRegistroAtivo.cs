@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Web.Migrations
+namespace Repositorios.Migrations
 {
     /// <inheritdoc />
     public partial class AlterarTabelaMarcasAlterandoNomeColunaRegistroAtivo : Migration

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Web.BancoDados;
-using Web.Entidades;
+using Servicos.Dtos.Cor;
+using Servicos.Interfaces;
 using Web.ViewModels;
 using Web.ViewModels.Forms;
 
@@ -9,34 +9,28 @@ namespace Web.Controllers
     [Route("/cor")]
     public class CorController : Controller
     {
-        private readonly VendasContexto _contexto;
+        private readonly ICorServico _servico;
 
-        public CorController(VendasContexto contexto)
+        public CorController(ICorServico servico)
         {
-            _contexto = contexto;    
+            _servico = servico;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            // Consultar todas as cores
-            // SELECT * FROM cores
-            var cores = _contexto.Cores.ToList();
+            var dtos = _servico.ObterTodos();
 
             // Criar a lista de cores que será utilizado na tela
             var coresViewModel = new List<CorViewModel>();
             // Percorrer cada uma das cores que foram consultadas na tabela de cores
-            foreach(var cor in cores)
+            foreach (var corDto in dtos)
             {
-                //var corViewModel = new CorViewModel();
-                //corViewModel.Id = cor.Id;
-                //corViewModel.Nome = cor.Nome;
-
                 // Inicialização rápida de objeto
                 var corViewModel = new CorViewModel
                 {
-                    Id = cor.Id,
-                    Nome = cor.Nome
+                    Id = corDto.Id,
+                    Nome = corDto.Nome
                 };
                 // Adicionado o view Model na lista de view models
                 coresViewModel.Add(corViewModel);
@@ -55,18 +49,13 @@ namespace Web.Controllers
 
         [HttpPost]
         [Route("cadastrar")]
-        public IActionResult Cadastrar(string nome)
+        public IActionResult Cadastrar(CorCadastrarViewModel viewModel)
         {
-            // Instanciando um objeto da classe Cor
-            var cor = new Cor();
-            // Atribuindo valor para a propriedado, este valor veio do form que o usuário preencheu
-            cor.Nome = nome;
-
-            // Adicionando na tabela de cores a cor que foi instanciada
-            _contexto.Cores.Add(cor);
-            // Concretizando o insert na base de dados
-            // INSERT INTO cores (nome) VALUES ('Cinza');  Comando de exemplo
-            _contexto.SaveChanges();
+            var dto = new CorCadastrarDto
+            {
+                Nome = viewModel.Nome!
+            };
+            _servico.Cadastrar(dto);
 
             return RedirectToAction("Index");
         }
@@ -75,52 +64,51 @@ namespace Web.Controllers
         [Route("apagar")]
         public IActionResult Apagar(int id)
         {
-            // Consultando a cor filtrando por id
-            var cor = _contexto.Cores.Find(id);
-            // Caso não encontrar a cor retornar 404 (not found)
-            if (cor is null)
-                return NotFound("Cor não encontrada");
-
-            // Remover a cor da lista de cores
-            _contexto.Cores.Remove(cor);
-            // Concretizar o delete na tabela de cores
-            // DELETE FROM cores WHERE id = 1;  Comando de exemplo
-            _contexto.SaveChanges();
-
-            // Redirecionar para a lista de cores
-            return RedirectToAction("Index");
+            try
+            {
+                _servico.Apagar(id);
+                // Redirecionar para a lista de cores
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
         }
 
         [HttpGet]
         [Route("editar")]
         public IActionResult Editar(int id)
         {
-            // Consultar a cor filtrando por id da tabela de cores
-            var cor = _contexto.Cores.Find(id);
-            if(cor is null)
+            try
+            {
+                // Consultar a cor filtrando por id da tabela de cores
+                var dto = _servico.ObterPorId(id);
+
+                var viewModel = new CorEditarViewModel
+                {
+                    Id = dto.Id,
+                    Nome = dto.Nome
+                };
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
                 return NotFound("Cor não encontrada");
-
-            var viewModel = new CorEditarViewModel();
-            viewModel.Id = cor.Id;
-            viewModel.Nome = cor.Nome;
-
-            return View(viewModel);
+            }
         }
 
         [HttpPost]
         [Route("editar")]
-        public IActionResult Editar(int id, string nome)
+        public IActionResult Editar(CorEditarViewModel viewModel)
         {
-            // Consultar a cor filtrando por id da tabela de cores
-            var cor = _contexto.Cores.Find(id);
-            if (cor is null)
-                return NotFound("Cor não encontrada");
-
-            // Definindo o nome do objeto da cor que foi consultada na tabela de cores
-            cor.Nome = nome;
-            // Concretizando o atualização dos dados da cor
-            // UPDATE cores SET nome = 'Cinza' WHERE id = 1; Comando de exemplo
-            _contexto.SaveChanges();
+            var dto = new CorEditarDto
+            {
+                Id = viewModel.Id,
+                Nome = viewModel.Nome
+            };
+            _servico.Editar(dto);
 
             // Redirecionar para listagem de cores
             return RedirectToAction("Index");

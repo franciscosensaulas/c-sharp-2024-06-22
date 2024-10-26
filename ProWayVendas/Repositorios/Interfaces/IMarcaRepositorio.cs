@@ -1,13 +1,13 @@
 ﻿using Repositorios.Entidades;
 
-namespace Repositorios.Repositorios
+namespace Repositorios.Interfaces
 {
-    internal interface IMarcaRepositorio
+    public interface IMarcaRepositorio
     {
         Marca Add(Marca marca); // Adicionar
         void Update(Marca marca); // Atualizar
         void Delete(Marca marca); // Apagar
-        List<Marca> GetAll(); // ObterTodos
+        IList<Marca> GetAll(string? nome, string? cnpj); // ObterTodos
         Marca? GetById(int id); // ObterPorId
     }
 }

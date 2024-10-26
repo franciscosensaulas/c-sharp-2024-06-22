@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Web.Entidades;
-using Web.Mapeamentos;
+using Repositorios.Mapeamentos;
 
-namespace Web.BancoDados
+namespace Repositorios.BancoDados
 {
     public class VendasContexto : DbContext
     {
-        public DbSet<Cor> Cores { get; set; }
-        public DbSet<Marca> Marcas { get; set; }
-
         // Instalar o CLI do dotnet ef
         // dotnet tool install --global dotnet-ef
 
