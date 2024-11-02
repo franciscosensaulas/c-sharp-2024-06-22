@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Repositorios\Repositorios.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Builders\Entidades\" />
+  </ItemGroup>
+
 </Project>

@@ -20,25 +20,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Fiat</td>
-            <td>Uno</td>
-            <td>Carro</td>
-            <td>
-                <a href="#" class="button is-primary is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-pencil"></i>
-                    </span>
-                    <span>Editar</span>
-                </a>
-                <a href="#" class="button is-danger is-outlined is-small">
-                    <span class="icon is-small">
-                        <i class="fas fa-trash"></i>
-                    </span>
-                    <span>Apagar</span>
-                </a>
-            </td>
-        </tr>
+        @foreach (var modelo in Model)
+        {
+            <tr>
+                <td>@modelo.Id</td>
+                <td>@modelo.Marca</td>
+                <td>@modelo.Nome</td>
+                <td>@modelo.Classificacao</td>
+                <td>
+                    <a href="#" class="button is-primary is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-pencil"></i>
+                        </span>
+                        <span>Editar</span>
+                    </a>
+                    <a href="#" class="button is-danger is-outlined is-small">
+                        <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                        <span>Apagar</span>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

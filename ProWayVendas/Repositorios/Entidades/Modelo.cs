@@ -1,12 +1,11 @@
 ﻿using Repositorios.Enums;
 
-namespace Web.ViewModels
+namespace Repositorios.Entidades
 {
-    public class ModeloViewModel
+    public class Modelo : EntidadeBase
     {
-        public int Id { get; set; }
-        public string Marca { get; set; }
         public string Nome { get; set; }
         public ModeloClassificacao Classificacao { get; set; }
+        public Marca Marca { get; set; }
     }
 }

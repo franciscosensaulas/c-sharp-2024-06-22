@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositorios.BancoDados;
 
@@ -11,9 +12,11 @@ using Repositorios.BancoDados;
 namespace Repositorios.Migrations
 {
     [DbContext(typeof(VendasContexto))]
-    partial class VendasContextoModelSnapshot : ModelSnapshot
+    [Migration("20241102120412_CriarTabelaModelos")]
+    partial class CriarTabelaModelos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

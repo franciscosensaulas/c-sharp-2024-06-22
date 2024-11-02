@@ -1,7 +1,6 @@
 ﻿using Repositorios.Entidades;
 using Repositorios.Interfaces;
 using Servicos.Dtos.Marca;
-using Servicos.Dtos.Marca;
 using Servicos.Interfaces;
 
 namespace Servicos.Servicos

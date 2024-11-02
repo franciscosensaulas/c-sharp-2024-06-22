@@ -16,9 +16,11 @@ builder.Services.AddScoped<ICorServico, CorServico>();
 builder.Services.AddScoped<ICorRepositorio, CorRepositorio>();
 builder.Services.AddScoped<IMarcaRepositorio, MarcaRepositorio>();
 builder.Services.AddScoped<IMarcaServico, MarcaServico>();
+builder.Services.AddScoped<IModeloRepositorio, ModeloRepositorio>();
+builder.Services.AddScoped<IModeloServico, ModeloServico>();
 
-// Adicionar o VendasContexto que é classe que tem a herança de DbContext,
-// que permitirá manipular o nosso banco de dados
+// Adicionar o VendasContexto que ï¿½ classe que tem a heranï¿½a de DbContext,
+// que permitirï¿½ manipular o nosso banco de dados
 builder.Services.AddDbContext<VendasContexto>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("SqlServer")));
 

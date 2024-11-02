@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Repositorios.Entidades;
-using Repositorios.Interfaces;
 using Servicos.Dtos.Marca;
 using Servicos.Interfaces;
 using Web.ViewModels;

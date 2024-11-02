@@ -7,5 +7,7 @@
         public string Cnpj { get; set; }
         public string? Descricao { get; set; }
         public bool RegistroAtivo { get; set; } = true;
+
+        public ICollection<Modelo> Modelos { get; set; }
     }
 }

@@ -9,11 +9,11 @@ namespace Repositorios.BancoDados
         // dotnet tool install --global dotnet-ef
 
         // Como gerar nova migration
-        // dotnet ef migrations add <NomeMigracao>
-        // Ex.: dotnet ef migrations add CriarTabelaCores
+        // dotnet ef migrations add <NomeMigracao>  --project Repositorios  --startup-project Web
+        // Ex.: dotnet ef migrations add CriarTabelaCores  --project Repositorios  --startup-project Web
 
         // Atualizar o banco de dados aplicando as migrations
-        // dotnet ef database update
+        // dotnet ef database update --project Repositorios  --startup-project Web
 
         // Migration: é um snapshot do código referente as tabelas do banco de dados
 
@@ -29,6 +29,7 @@ namespace Repositorios.BancoDados
 
             modelBuilder.ApplyConfiguration(new CorMapeamento());
             modelBuilder.ApplyConfiguration(new MarcaMapeamento());
+            modelBuilder.ApplyConfiguration(new ModeloMapeamento());
         }
     }
 }
