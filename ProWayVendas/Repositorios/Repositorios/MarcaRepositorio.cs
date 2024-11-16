@@ -16,21 +16,21 @@ namespace Repositorios.Repositorios
             _dbSet = _contexto.Set<Marca>();
         }
 
-        public Marca Add(Marca marca)
+        public async Task<Marca> Add(Marca marca)
         {
-            _dbSet.Add(marca);
-            _contexto.SaveChanges();
+            await _dbSet.AddAsync(marca);
+            await _contexto.SaveChangesAsync();
             return marca;
         }
 
-        public void Delete(Marca marca)
+        public async Task Delete(Marca marca)
         {
             marca.RegistroAtivo = false;
             _dbSet.Update(marca);
-            _contexto.SaveChanges();
+            await _contexto.SaveChangesAsync();
         }
 
-        public IList<Marca> GetAll(string? nome, string? cnpj)
+        public async Task<IList<Marca>> GetAll(string? nome, string? cnpj)
         {
             var query = _dbSet.Where(x => x.RegistroAtivo).AsQueryable();
 
@@ -42,18 +42,18 @@ namespace Repositorios.Repositorios
 
             query = query.OrderBy(x => x.Nome);
 
-            return query.ToList();
+            return await query.ToListAsync();
         }
 
-        public Marca? GetById(int id)
+        public async Task<Marca?> GetById(int id)
         {
-            return _dbSet.FirstOrDefault(x => x.Id == id);
+            return await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public void Update(Marca marca)
+        public async Task Update(Marca marca)
         {
             _dbSet.Update(marca);
-            _contexto.SaveChanges();
+            await _contexto.SaveChangesAsync();
         }
     }
 }

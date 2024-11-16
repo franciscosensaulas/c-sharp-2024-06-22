@@ -4,10 +4,10 @@ namespace Servicos.Interfaces
 {
     public interface IMarcaServico
     {
-        int Cadastrar(MarcaCadastrarDto dto);
-        void Editar(MarcaEditarDto dto);
-        void Apagar(int id);
-        IList<MarcaDto> ObterTodos(string? nome, string? cnpj);
-        MarcaDto ObterPorId(int id);
+        Task<int> Cadastrar(MarcaCadastrarDto dto);
+        Task Editar(MarcaEditarDto dto);
+        Task Apagar(int id);
+        Task<IList<MarcaDto>> ObterTodos(string? nome = "", string? cnpj = "");
+        Task<MarcaDto> ObterPorId(int id);
     }
 }

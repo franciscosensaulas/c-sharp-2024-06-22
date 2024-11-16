@@ -1,0 +1,25 @@
+<div class="card flex flex-column m-3 gap-2">
+
+    <div class="flex flex-row  gap-2">
+        <div class="flex flex-column gap-2">
+            <label for="nome">Nome <span class="text-danger">*</span></label>
+            <input pInputText id="nome" aria-describedby="nome-help" [(ngModel)]="form.nome" autofocus />
+        </div>
+
+        <div class="flex flex-column gap-2">
+            <label for="cnpj">CNPJ <span class="text-danger">*</span></label>
+            <p-inputMask mask="99.999.999/9999-99" inputId="cnpj" [(ngModel)]="form.cnpj"
+                placeholder="12.345.678/0001-90" />
+        </div>
+    </div>
+
+    <div class="flex flex-column gap-2">
+        <label for="descricao">Descrição</label>
+        <textarea rows="5" cols="30" pInputTextarea id="descricao" [(ngModel)]="form.descricao">
+    </textarea>
+    </div>
+
+    <div class="flex justify-content-end flex-wrap mt-2">
+        <p-button label="Salvar" icon="pi pi-check" severity="success" (onClick)="salvar()" />
+    </div>
+</div>

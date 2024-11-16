@@ -14,18 +14,18 @@ namespace Servicos.Servicos
             _repositorio = repositorio;
         }
 
-        public void Apagar(int id)
+        public async Task Apagar(int id)
         {
             // Consultando a marca filtrando por id
-            var marca = _repositorio.GetById(id);
+            var marca = await _repositorio.GetById(id);
             // Caso não encontrar a marca retornar 404 (not found)
             if (marca is null)
                 throw new Exception("Marca não encontrada");
 
-            _repositorio.Delete(marca);
+            await _repositorio.Delete(marca);
         }
 
-        public int Cadastrar(MarcaCadastrarDto dto)
+        public async Task<int> Cadastrar(MarcaCadastrarDto dto)
         {
             var marca = new Marca
             {
@@ -33,13 +33,13 @@ namespace Servicos.Servicos
                 Cnpj = dto.Cnpj,
                 Descricao = dto.Descricao,
             };
-            _repositorio.Add(marca);
+            await _repositorio.Add(marca);
             return marca.Id;
         }
 
-        public void Editar(MarcaEditarDto dto)
+        public async Task Editar(MarcaEditarDto dto)
         {
-            var marca = _repositorio.GetById(dto.Id);
+            var marca = await _repositorio.GetById(dto.Id);
             if (marca is null)
                 throw new Exception("Marca não encontrada");
 
@@ -47,12 +47,12 @@ namespace Servicos.Servicos
             marca.Descricao = dto.Descricao;
             marca.Cnpj = dto.Cnpj;
 
-            _repositorio.Update(marca);
+            await _repositorio.Update(marca);
         }
 
-        public MarcaDto ObterPorId(int id)
+        public async Task<MarcaDto> ObterPorId(int id)
         {
-            var marca = _repositorio.GetById(id);
+            var marca = await _repositorio.GetById(id);
             if (marca is null)
                 throw new Exception("Marca não encontrada");
 
@@ -65,10 +65,10 @@ namespace Servicos.Servicos
             };
         }
 
-        public IList<MarcaDto> ObterTodos(string? nome, string? cnpj)
+        public async Task<IList<MarcaDto>> ObterTodos(string? nome, string? cnpj)
         {
             // Consultar todas as marcaes
-            var marcaes = _repositorio.GetAll(nome, cnpj);
+            var marcaes = await _repositorio.GetAll(nome, cnpj);
 
             var dtos = new List<MarcaDto>();
             foreach (var marca in marcaes)

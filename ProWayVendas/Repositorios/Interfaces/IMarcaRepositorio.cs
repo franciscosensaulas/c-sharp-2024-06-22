@@ -4,10 +4,10 @@ namespace Repositorios.Interfaces
 {
     public interface IMarcaRepositorio
     {
-        Marca Add(Marca marca); // Adicionar
-        void Update(Marca marca); // Atualizar
-        void Delete(Marca marca); // Apagar
-        IList<Marca> GetAll(string? nome, string? cnpj); // ObterTodos
-        Marca? GetById(int id); // ObterPorId
+        Task<Marca> Add(Marca marca); // Adicionar
+        Task Update(Marca marca); // Atualizar
+        Task Delete(Marca marca); // Apagar
+        Task<IList<Marca>> GetAll(string? nome, string? cnpj); // ObterTodos
+        Task<Marca?> GetById(int id); // ObterPorId
     }
 }

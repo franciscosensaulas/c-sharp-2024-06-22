@@ -36,9 +36,9 @@ namespace Web.Controllers
         }
 
         [HttpGet("cadastrar")]
-        public IActionResult Cadastrar()
+        public async Task<IActionResult> Cadastrar()
         {
-            var marcaDtos = _marcaServico.ObterTodos(string.Empty, string.Empty);
+            var marcaDtos = await _marcaServico.ObterTodos(string.Empty, string.Empty);
 
             var viewModel = new ModeloTelaCadastroViewModel
             {
@@ -51,11 +51,11 @@ namespace Web.Controllers
         }
 
         [HttpPost("cadastrar")]
-        public IActionResult Cadastrar([FromForm] ModeloTelaCadastroViewModel viewModel)
+        public async Task<IActionResult> Cadastrar([FromForm] ModeloTelaCadastroViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
-                var marcaDtos = _marcaServico.ObterTodos(string.Empty, string.Empty);
+                var marcaDtos = await _marcaServico.ObterTodos(string.Empty, string.Empty);
                 viewModel.Marcas = marcaDtos.Select(x => new SelectListItem(x.Nome, x.Id.ToString())).ToList();
                 viewModel.Classificacoes = Enum.GetValues(typeof(ModeloClassificacao))
                     .Cast<ModeloClassificacao>()

@@ -19,7 +19,7 @@ public class ModeloServico : IModeloServico
 
     public int Cadastrar(ModeloCadastrarDto dto)
     {
-        var marca = _marcaRepositorio.GetById(dto.MarcaId);
+        var marca = _marcaRepositorio.GetById(dto.MarcaId).Result;
 
         if (marca is null)
             throw new Exception($"Marca não cadastrada com id {dto.MarcaId}");

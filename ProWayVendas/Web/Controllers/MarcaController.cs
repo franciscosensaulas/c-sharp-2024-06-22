@@ -17,9 +17,9 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index([FromQuery] string? nome, [FromQuery] string? cnpj)
+        public async Task<IActionResult> Index([FromQuery] string? nome, [FromQuery] string? cnpj)
         {
-            var dtos = _servico.ObterTodos(nome, cnpj);
+            var dtos = await _servico.ObterTodos(nome, cnpj);
 
             var viewModels = new List<MarcaViewModel>();
 
@@ -83,12 +83,11 @@ namespace Web.Controllers
         }
 
         [HttpGet("editar")]
-        public IActionResult Editar(int id)
+        public async Task<IActionResult> Editar(int id)
         {
             try
             {
-
-                var marca = _servico.ObterPorId(id);
+                var marca = await _servico.ObterPorId(id);
 
                 var viewModel = new MarcaEditarViewModel
                 {
